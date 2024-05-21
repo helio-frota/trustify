@@ -103,6 +103,7 @@ fixed: RHSA-2023:7697 -> CVE-2023-1370 -> AMQ Clients >=2.0|<3.0
 * https://access.redhat.com/errata/RHSA-2023:7697
 * https://access.redhat.com/security/data/csaf/v2/advisories/2023/rhsa-2023_7697.json
 * https://github.com/CVEProject/cvelistV5/blob/main/cves/2023/1xxx/CVE-2023-1370.json
+* https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2019/icsa-19-099-03.json
 
 ### Questions?
 
