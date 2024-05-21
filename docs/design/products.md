@@ -95,6 +95,15 @@ cpe:/a:redhat:a_mq_clients:2 -> Red Hat / AMQ -> Red Hat / AMQ / family / AMQ Cl
 fixed: RHSA-2023:7697 -> CVE-2023-1370 -> AMQ Clients >=2.0|<3.0 
 ```
 
+### References
+
+* https://github.com/openvex/spec/blob/main/OPENVEX-SPEC.md#product-data-structure
+* https://en.wikipedia.org/wiki/Common_Platform_Enumeration
+* https://access.redhat.com/security/cve/CVE-2023-1370
+* https://access.redhat.com/errata/RHSA-2023:7697
+* https://access.redhat.com/security/data/csaf/v2/advisories/2023/rhsa-2023_7697.json
+* https://github.com/CVEProject/cvelistV5/blob/main/cves/2023/1xxx/CVE-2023-1370.json
+
 ### Questions?
 
 * Can SBOM describe the product range? 
