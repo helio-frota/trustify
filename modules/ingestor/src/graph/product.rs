@@ -32,4 +32,38 @@ impl super::Graph {
             entity.insert(&self.connection(&tx)).await?,
         ))
     }
+
+    pub async fn get_product_by_name<TX: AsRef<Transactional>>(
+        &self,
+        name: impl Into<String>,
+        tx: TX,
+    ) -> Result<Option<ProductContext>, Error> {
+        Ok(product::Entity::find()
+            .filter(product::Column::Name.eq(name.into()))
+            .one(&self.connection(&tx))
+            .await?
+            .map(|product| ProductContext::new(self, product)))
+    }    
+}
+
+
+#[cfg(test)]
+#[allow(clippy::unwrap_used)]
+mod tests {
+    use crate::graph::Graph;
+    use test_context::test_context;
+    use test_log::test;
+    use trustify_common::db::{test::TrustifyContext, Transactional};
+
+    #[test_context(TrustifyContext, skip_teardown)]
+    #[test(actix_web::test)]
+    async fn all_products(ctx: TrustifyContext) -> Result<(), anyhow::Error> {
+        let db = ctx.db;
+        let system = Graph::new(db);
+    
+        system
+            .ingest_product("Trusted Profile Analyzer", (),).await?;
+    
+        Ok(())
+    }    
 }
