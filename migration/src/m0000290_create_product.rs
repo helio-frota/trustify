@@ -1,5 +1,7 @@
 use sea_orm_migration::prelude::*;
 
+use crate::m0000022_create_organization::Organization;
+
 #[derive(DeriveMigrationName)]
 pub struct Migration;
 
@@ -19,6 +21,12 @@ impl MigrationTrait for Migration {
                             .primary_key(),
                     )
                     .col(ColumnDef::new(Product::Name).string().not_null())
+                    .col(ColumnDef::new(Product::VendorId).integer() /* allowed to be null if not known */)
+                    .foreign_key(
+                        ForeignKey::create()
+                            .from_col(Product::VendorId)
+                            .to(Organization::Table, Organization::Id)
+                    )                    
                     .to_owned(),
             )
             .await?;
@@ -38,4 +46,5 @@ pub enum Product {
     Table,
     Id,
     Name,
+    VendorId,
 }

@@ -15,16 +15,43 @@ impl<'g> ProductContext<'g> {
     }
 }
 
+#[derive(Clone, Default)]
+pub struct ProductInformation {
+    pub vendor: Option<String>,
+}
+
+impl ProductInformation {
+    pub fn has_data(&self) -> bool {
+        self.vendor.is_some()
+    }
+}
+
+impl From<()> for ProductInformation {
+    fn from(_value: ()) -> Self {
+        Self::default()
+    }
+}
+
 impl super::Graph {
     pub async fn ingest_product<TX: AsRef<Transactional>>(
         &self,
         name: impl Into<String>,
+        information: impl Into<ProductInformation>,
         tx: TX,
     ) -> Result<ProductContext, Error> {
         let name = name.into();
+        let information = information.into();
+
+        let vendor = if let Some(vendor) = information.vendor {
+            Some(self.ingest_organization(vendor, (), &tx).await?)
+        } else {
+            None
+        };
+
         let entity = product::ActiveModel {
             id: Default::default(),
             name: Set(name),
+            vendor_id: Set(vendor.map(|org| org.organization.id)),
         };
 
         Ok(ProductContext::new(

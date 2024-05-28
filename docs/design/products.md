@@ -10,7 +10,7 @@ erDiagram
         string name
         string category
         string category_value
-        string description        
+        string description
     }
 
     ProductVersions {
@@ -97,6 +97,7 @@ fixed: RHSA-2023:7697 -> CVE-2023-1370 -> AMQ Clients >=2.0|<3.0
 
 ### References
 
+* https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category
 * https://github.com/openvex/spec/blob/main/OPENVEX-SPEC.md#product-data-structure
 * https://en.wikipedia.org/wiki/Common_Platform_Enumeration
 * https://access.redhat.com/security/cve/CVE-2023-1370
