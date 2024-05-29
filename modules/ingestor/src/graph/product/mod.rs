@@ -1,9 +1,15 @@
+mod product_version;
+
 use sea_orm::{ActiveModelTrait, ColumnTrait, EntityTrait, QueryFilter, Set};
 use trustify_common::db::Transactional;
+use trustify_entity as entity;
 use trustify_entity::product;
 
 use crate::graph::{error::Error, Graph};
 
+use self::product_version::ProductVersionContext;
+
+#[derive(Clone)]
 pub struct ProductContext<'g> {
     graph: &'g Graph,
     pub product: product::Model,
@@ -12,6 +18,24 @@ pub struct ProductContext<'g> {
 impl<'g> ProductContext<'g> {
     pub fn new(graph: &'g Graph, product: product::Model) -> Self {
         Self { graph, product }
+    }
+
+    pub async fn ingest_product_version<TX: AsRef<Transactional>>(
+        &self,
+        version: String,
+        tx: TX,
+    ) -> Result<ProductVersionContext<'g>, Error> {
+        //TODO check if exists
+        let model = entity::product_version::ActiveModel {
+            id: Default::default(),
+            product_id: Set(self.product.id),
+            version: Set(version.clone()),
+        };
+
+        Ok(ProductVersionContext::new(
+            self,
+            model.insert(&self.graph.connection(&tx)).await?,
+        ))
     }
 }
 
@@ -70,27 +94,6 @@ impl super::Graph {
             .one(&self.connection(&tx))
             .await?
             .map(|product| ProductContext::new(self, product)))
-    }    
+    }
 }
 
-
-#[cfg(test)]
-#[allow(clippy::unwrap_used)]
-mod tests {
-    use crate::graph::Graph;
-    use test_context::test_context;
-    use test_log::test;
-    use trustify_common::db::{test::TrustifyContext, Transactional};
-
-    #[test_context(TrustifyContext, skip_teardown)]
-    #[test(actix_web::test)]
-    async fn all_products(ctx: TrustifyContext) -> Result<(), anyhow::Error> {
-        let db = ctx.db;
-        let system = Graph::new(db);
-    
-        system
-            .ingest_product("Trusted Profile Analyzer", (),).await?;
-    
-        Ok(())
-    }    
-}

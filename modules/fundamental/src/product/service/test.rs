@@ -14,7 +14,7 @@ async fn all_products(ctx: TrustifyContext) -> Result<(), anyhow::Error> {
     let db = ctx.db;
     let graph = Arc::new(Graph::new(db.clone()));
 
-    graph
+    let pr = graph
         .ingest_product(
             "Trusted Profile Analyzer",
             ProductInformation {
@@ -23,6 +23,8 @@ async fn all_products(ctx: TrustifyContext) -> Result<(), anyhow::Error> {
             (),
         )
         .await?;
+
+    let prv = pr.ingest_product_version("1.0.0".to_string(), ()).await?;
 
     let service = crate::product::service::ProductService::new(db);
 

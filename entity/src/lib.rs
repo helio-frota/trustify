@@ -13,6 +13,7 @@ pub mod package_relates_to_package;
 pub mod package_version;
 pub mod package_version_range;
 pub mod product;
+pub mod product_version;
 pub mod qualified_package;
 pub mod relationship;
 pub mod sbom;
