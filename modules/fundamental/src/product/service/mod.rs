@@ -24,40 +24,20 @@ impl ProductService {
         tx: TX,
     ) -> Result<PaginatedResults<ProductSummary>, Error> {
         let connection = self.db.connection(&tx);
-    
+
         let limiter = product::Entity::find().filtering(search)?.limiting(
             &connection,
             paginated.offset,
             paginated.limit,
         );
-    
+
         let total = limiter.total().await?;
-    
+
         Ok(PaginatedResults {
             total,
             items: ProductSummary::from_entities(&limiter.fetch().await?, &connection).await?,
         })
     }
-
-    // pub async fn fetch_organization<TX: AsRef<Transactional> + Sync + Send>(
-    //     &self,
-    //     id: i32,
-    //     tx: TX,
-    // ) -> Result<Option<OrganizationDetails>, Error> {
-    //     let connection = self.db.connection(&tx);
-
-    //     if let Some(organization) = organization::Entity::find()
-    //         .filter(organization::Column::Id.eq(id))
-    //         .one(&connection)
-    //         .await?
-    //     {
-    //         Ok(Some(
-    //             OrganizationDetails::from_entity(&organization, &connection).await?,
-    //         ))
-    //     } else {
-    //         Ok(None)
-    //     }
-    // }
 }
 
 #[cfg(test)]

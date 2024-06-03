@@ -5,14 +5,18 @@ use crate::{
     db::{LeftPackageId, QualifiedPackageTransitive},
     graph::{
         cpe::CpeContext,
+        product::product_version::ProductVersionContext,
+        product::ProductContext,
         purl::{creator::PurlCreator, qualified_package::QualifiedPackageContext},
         Graph,
     },
 };
 use cpe::uri::OwnedUri;
+use entity::{product, product_version};
+use sea_orm::ModelTrait;
 use sea_orm::{
-    prelude::Uuid, ActiveModelTrait, ColumnTrait, EntityTrait, QueryFilter, QuerySelect,
-    QueryTrait, RelationTrait, Select, SelectColumns, Set,
+    prelude::Uuid, ActiveModelTrait, ActiveValue, ColumnTrait, EntityTrait, QueryFilter,
+    QuerySelect, QueryTrait, Related, RelationTrait, Select, SelectColumns, Set, Unchanged,
 };
 use sea_query::{Alias, Condition, Func, JoinType, Query, SimpleExpr};
 use std::{
@@ -723,6 +727,49 @@ impl SbomContext {
         }
 
         Ok(assertions)
+    }
+
+    pub async fn link_to_product<TX: AsRef<Transactional>>(
+        &self,
+        product_id: i32,
+        tx: TX,
+    ) -> Result<(), Error> {
+        let mut product_version = product_version::ActiveModel {
+            id: Unchanged(product_id),
+            sbom_id: Set(Some(self.sbom.sbom_id)),
+            ..Default::default()
+        };
+
+        let ver = product_version.update(&self.graph.connection(&tx)).await?;
+
+        Ok(())
+    }
+
+    pub async fn get_product<TX: AsRef<Transactional>>(
+        &self,
+        tx: TX,
+    ) -> Result<Option<ProductVersionContext>, Error> {
+        if let Some(vers) = product_version::Entity::find()
+            .filter(product_version::Column::SbomId.eq(self.sbom.sbom_id))
+            //.find_with_related(entity::product::Entity)
+            .one(&self.graph.connection(&tx))
+            .await?
+        {
+            if let Some(prod) = vers
+                .find_related(product::Entity)
+                .one(&self.graph.connection(&tx))
+                .await?
+            {
+                Ok(Some(ProductVersionContext::new(
+                    &ProductContext::new(&self.graph, prod),
+                    vers,
+                )))
+            } else {
+                Ok(None)
+            }
+        } else {
+            Ok(None)
+        }
     }
 
     /*

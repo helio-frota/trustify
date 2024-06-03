@@ -1,4 +1,4 @@
-mod product_version;
+pub mod product_version;
 
 use sea_orm::{ActiveModelTrait, ColumnTrait, EntityTrait, QueryFilter, Set};
 use trustify_common::db::Transactional;
@@ -25,10 +25,10 @@ impl<'g> ProductContext<'g> {
         version: String,
         tx: TX,
     ) -> Result<ProductVersionContext<'g>, Error> {
-        //TODO check if exists
         let model = entity::product_version::ActiveModel {
             id: Default::default(),
             product_id: Set(self.product.id),
+            sbom_id: Set(None),
             version: Set(version.clone()),
         };
 
@@ -96,4 +96,3 @@ impl super::Graph {
             .map(|product| ProductContext::new(self, product)))
     }
 }
-

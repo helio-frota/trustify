@@ -1,6 +1,6 @@
 use sea_orm_migration::prelude::*;
 
-use crate::{m0000280_create_product::Product, Now};
+use crate::{m0000030_create_sbom::Sbom, m0000280_create_product::Product, Now};
 
 #[derive(DeriveMigrationName)]
 pub struct Migration;
@@ -26,13 +26,24 @@ impl MigrationTrait for Migration {
                             .timestamp_with_time_zone()
                             .default(Func::cust(Now)),
                     )
-                    .col(ColumnDef::new(ProductVersion::ProductId).integer().not_null())
+                    .col(
+                        ColumnDef::new(ProductVersion::ProductId)
+                            .integer()
+                            .not_null(),
+                    )
+                    .col(ColumnDef::new(ProductVersion::SbomId).uuid())
                     .col(ColumnDef::new(ProductVersion::Version).string().not_null())
                     .foreign_key(
                         ForeignKey::create()
                             .from_col(ProductVersion::ProductId)
                             .to(Product::Table, Product::Id)
                             .on_delete(ForeignKeyAction::Cascade),
+                    )
+                    .foreign_key(
+                        ForeignKey::create()
+                            .from_col(ProductVersion::SbomId)
+                            .to(Sbom::Table, Sbom::SbomId)
+                            .on_delete(ForeignKeyAction::SetNull),
                     )
                     .to_owned(),
             )
@@ -81,5 +92,6 @@ pub enum ProductVersion {
     Timestamp,
     // --
     ProductId,
+    SbomId,
     Version,
 }

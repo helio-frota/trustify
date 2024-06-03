@@ -7,6 +7,7 @@ pub struct Model {
     #[sea_orm(primary_key)]
     pub id: i32,
     pub product_id: i32,
+    pub sbom_id: Option<Uuid>,
     pub version: String,
 }
 

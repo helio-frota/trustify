@@ -26,7 +26,7 @@ impl MigrationTrait for Migration {
                         ForeignKey::create()
                             .from_col(Product::VendorId)
                             .to(Organization::Table, Organization::Id)
-                    )                    
+                    )
                     .to_owned(),
             )
             .await?;
