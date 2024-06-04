@@ -1,6 +1,7 @@
 pub mod product_version;
 
-use sea_orm::{ActiveModelTrait, ColumnTrait, EntityTrait, QueryFilter, Set};
+use entity::organization;
+use sea_orm::{ActiveModelTrait, ColumnTrait, EntityTrait, ModelTrait, QueryFilter, Set};
 use trustify_common::db::Transactional;
 use trustify_entity as entity;
 use trustify_entity::product;
@@ -8,6 +9,8 @@ use trustify_entity::product;
 use crate::graph::{error::Error, Graph};
 
 use self::product_version::ProductVersionContext;
+
+use super::organization::OrganizationContext;
 
 #[derive(Clone)]
 pub struct ProductContext<'g> {
@@ -36,6 +39,20 @@ impl<'g> ProductContext<'g> {
             self,
             model.insert(&self.graph.connection(&tx)).await?,
         ))
+    }
+
+    pub async fn get_vendor<TX: AsRef<Transactional>>(
+        &self,
+        tx: TX,
+    ) -> Result<Option<OrganizationContext>, Error> {
+        match self.product
+            .find_related(organization::Entity)
+            .one(&self.graph.connection(&tx))
+            .await?
+        {
+            Some(org) => Ok(Some(OrganizationContext::new(self.graph, org))),
+            None => Ok(None),
+        }
     }
 }
 

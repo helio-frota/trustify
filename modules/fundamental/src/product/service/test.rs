@@ -86,10 +86,12 @@ async fn link_sbom_to_product(ctx: TrustifyContext) -> Result<(), anyhow::Error>
         )
         .await?;
 
-    let prv = sbom.link_to_product(prv, Transactional::None)
-        .await?;
+    let prv = sbom.link_to_product(prv, Transactional::None).await?;
 
-    assert_eq!(sbom.sbom.sbom_id, prv.product_version.sbom_id.expect("no sbom"));
+    assert_eq!(
+        sbom.sbom.sbom_id,
+        prv.product_version.sbom_id.expect("no sbom")
+    );
 
     let product = sbom
         .get_product(Transactional::None)
@@ -98,7 +100,17 @@ async fn link_sbom_to_product(ctx: TrustifyContext) -> Result<(), anyhow::Error>
 
     assert_eq!("Trusted Profile Analyzer", product.product.product.name);
     assert_eq!("1.0.0", product.product_version.version);
-    assert_eq!(sbom.sbom.sbom_id, product.product_version.sbom_id.expect("No sbom"));
+    assert_eq!(
+        sbom.sbom.sbom_id,
+        product.product_version.sbom_id.expect("No sbom")
+    );
+
+    let org = product
+        .product
+        .get_vendor(Transactional::None)
+        .await?
+        .expect("no organization");
+    assert_eq!("Red Hat", org.organization.name);
 
     Ok(())
 }
