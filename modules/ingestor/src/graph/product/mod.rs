@@ -45,7 +45,8 @@ impl<'g> ProductContext<'g> {
         &self,
         tx: TX,
     ) -> Result<Option<OrganizationContext>, Error> {
-        match self.product
+        match self
+            .product
             .find_related(organization::Entity)
             .one(&self.graph.connection(&tx))
             .await?
