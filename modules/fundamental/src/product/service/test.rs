@@ -1,4 +1,3 @@
-use actix_web::cookie::time::OffsetDateTime;
 use std::sync::Arc;
 use test_context::test_context;
 use test_log::test;
@@ -25,7 +24,7 @@ async fn all_products(ctx: TrustifyContext) -> Result<(), anyhow::Error> {
         )
         .await?;
 
-    let mut ver = pr.ingest_product_version("1.0.0".to_string(), ()).await?;
+    let ver = pr.ingest_product_version("1.0.0".to_string(), ()).await?;
 
     let service = crate::product::service::ProductService::new(db);
 
@@ -77,8 +76,6 @@ async fn link_sbom_to_product(ctx: TrustifyContext) -> Result<(), anyhow::Error>
 
     let prv = pr.ingest_product_version("1.0.0".to_string(), ()).await?;
 
-    let service = crate::product::service::ProductService::new(db);
-
     let sbom = graph
         .ingest_sbom(
             "http://redhat.com/test.json",
@@ -89,8 +86,10 @@ async fn link_sbom_to_product(ctx: TrustifyContext) -> Result<(), anyhow::Error>
         )
         .await?;
 
-    sbom.link_to_product(prv.product_version.id, Transactional::None)
+    let prv = sbom.link_to_product(prv, Transactional::None)
         .await?;
+
+    assert_eq!(sbom.sbom.sbom_id, prv.product_version.sbom_id.expect("no sbom"));
 
     let product = sbom
         .get_product(Transactional::None)
@@ -99,6 +98,7 @@ async fn link_sbom_to_product(ctx: TrustifyContext) -> Result<(), anyhow::Error>
 
     assert_eq!("Trusted Profile Analyzer", product.product.product.name);
     assert_eq!("1.0.0", product.product_version.version);
+    assert_eq!(sbom.sbom.sbom_id, product.product_version.sbom_id.expect("No sbom"));
 
     Ok(())
 }

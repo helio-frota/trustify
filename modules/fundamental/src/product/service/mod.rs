@@ -1,5 +1,5 @@
 use crate::Error;
-use sea_orm::{ColumnTrait, EntityTrait, QueryFilter};
+use sea_orm::EntityTrait;
 use trustify_common::db::limiter::LimiterTrait;
 use trustify_common::db::query::{Filtering, Query};
 use trustify_common::db::{Database, Transactional};

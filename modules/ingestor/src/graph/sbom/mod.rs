@@ -15,8 +15,8 @@ use cpe::uri::OwnedUri;
 use entity::{product, product_version};
 use sea_orm::ModelTrait;
 use sea_orm::{
-    prelude::Uuid, ActiveModelTrait, ActiveValue, ColumnTrait, EntityTrait, QueryFilter,
-    QuerySelect, QueryTrait, Related, RelationTrait, Select, SelectColumns, Set, Unchanged,
+    prelude::Uuid, ActiveModelTrait, ColumnTrait, EntityTrait, QueryFilter, QuerySelect,
+    QueryTrait, RelationTrait, Select, SelectColumns, Set,
 };
 use sea_query::{Alias, Condition, Func, JoinType, Query, SimpleExpr};
 use std::{
@@ -729,20 +729,15 @@ impl SbomContext {
         Ok(assertions)
     }
 
-    pub async fn link_to_product<TX: AsRef<Transactional>>(
+    pub async fn link_to_product<'a, TX: AsRef<Transactional>>(
         &self,
-        product_id: i32,
+        product_version: ProductVersionContext<'a>,
         tx: TX,
-    ) -> Result<(), Error> {
-        let mut product_version = product_version::ActiveModel {
-            id: Unchanged(product_id),
-            sbom_id: Set(Some(self.sbom.sbom_id)),
-            ..Default::default()
-        };
-
-        let ver = product_version.update(&self.graph.connection(&tx)).await?;
-
-        Ok(())
+    ) -> Result<ProductVersionContext<'a>, Error> {
+        let mut entity = product_version::ActiveModel::from(product_version.product_version);
+        entity.sbom_id = Set(Some(self.sbom.sbom_id));
+        let model = entity.update(&self.graph.connection(&tx)).await?;
+        Ok(ProductVersionContext::new(&product_version.product, model))
     }
 
     pub async fn get_product<TX: AsRef<Transactional>>(
@@ -751,7 +746,6 @@ impl SbomContext {
     ) -> Result<Option<ProductVersionContext>, Error> {
         if let Some(vers) = product_version::Entity::find()
             .filter(product_version::Column::SbomId.eq(self.sbom.sbom_id))
-            //.find_with_related(entity::product::Entity)
             .one(&self.graph.connection(&tx))
             .await?
         {
