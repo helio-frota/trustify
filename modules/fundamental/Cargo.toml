@@ -78,6 +78,13 @@ urlencoding = { workspace = true }
 walkdir = { workspace = true }
 zip = { workspace = true }
 
+opentelemetry = { workspace = true }
+tracing-opentelemetry = { workspace = true }
+opentelemetry_sdk = { workspace = true }
+opentelemetry-otlp = { workspace = true, features = ["grpc-tonic"] }
+tracing = { workspace = true, features = ["std"]}
+tracing-core = "0.1"
+tracing-subscriber = { workspace = true }
 [[bench]]
 name = "bench"
 path = "benches/bench.rs"

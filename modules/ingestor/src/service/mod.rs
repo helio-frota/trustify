@@ -171,7 +171,7 @@ impl IngestorService {
         self.graph.db.clone()
     }
 
-    #[instrument(skip(self, bytes), err)]
+    #[instrument(skip_all)]
     pub async fn ingest(
         &self,
         bytes: &[u8],
