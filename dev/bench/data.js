@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1739226551281,
-  "repoUrl": "https://github.com/trustification/trustify",
+  "lastUpdate": 1740692526612,
+  "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
       {
@@ -4083,6 +4083,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/trustification/trustify/commit/b0eb7a654ff1f2e8ffad9d818b85523777bbcead"
         },
         "date": 1739226550548,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 7,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "c79963855708b28e5afcdbfbd8467c3113319ef5",
+          "message": "ci: have a concurrency group per branch",
+          "timestamp": "2025-02-27T14:43:52Z",
+          "tree_id": "ba6a5eedf064199606d4a739888ee0a2a64bf2dc",
+          "url": "https://github.com/helio-frota/trustify/commit/c79963855708b28e5afcdbfbd8467c3113319ef5"
+        },
+        "date": 1740692525801,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
