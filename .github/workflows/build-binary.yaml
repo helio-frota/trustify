@@ -22,23 +22,23 @@ jobs:
         edition: [ "", "-pm" ]
         target:
           - x86_64-unknown-linux-gnu
-          - aarch64-unknown-linux-gnu
+          # - aarch64-unknown-linux-gnu
           #- x86_64-unknown-linux-musl
           #- aarch64-unknown-linux-musl
-          - x86_64-apple-darwin
-          - aarch64-apple-darwin
-          - x86_64-pc-windows-msvc
+          # - x86_64-apple-darwin
+          # - aarch64-apple-darwin
+          # - x86_64-pc-windows-msvc
 
         include:
           - target: x86_64-unknown-linux-gnu
             os: ubuntu-22.04
             install: |
               sudo apt install -y libssl-dev
-          - target: aarch64-unknown-linux-gnu
-            os: ubuntu-22.04
-            cross: "true"
+          # - target: aarch64-unknown-linux-gnu
+          #   os: ubuntu-22.04
+          #   cross: "true"
             # Cross' Ubuntu container is based on 20.04. Its OpenSSL version is too old for us.
-            args: --features vendored
+            # args: --features vendored
 
           #- target: x86_64-unknown-linux-musl
           #  os: ubuntu-22.04
@@ -50,19 +50,19 @@ jobs:
           #  cross: "true"
           #  args: --features vendored
 
-          - target: x86_64-apple-darwin
-            os: macos-13
-          - target: aarch64-apple-darwin
-            os: macos-14
+          # - target: x86_64-apple-darwin
+          #   os: macos-13
+          # - target: aarch64-apple-darwin
+          #   os: macos-14
 
-          - target: x86_64-pc-windows-msvc
-            os: windows-2022
-            ext: ".exe"
-            archive: zip
-            install: |
-              git config --system core.longpaths true
-              echo "VCPKG_ROOT=$env:VCPKG_INSTALLATION_ROOT" | Out-File -FilePath $env:GITHUB_ENV -Append
-              vcpkg install openssl:x64-windows-static-md
+          # - target: x86_64-pc-windows-msvc
+          #   os: windows-2022
+          #   ext: ".exe"
+          #   archive: zip
+          #   install: |
+          #     git config --system core.longpaths true
+          #     echo "VCPKG_ROOT=$env:VCPKG_INSTALLATION_ROOT" | Out-File -FilePath $env:GITHUB_ENV -Append
+          #     vcpkg install openssl:x64-windows-static-md
 
     env:
       dirname: "trustd${{ matrix.edition }}-${{ inputs.version }}-${{ matrix.target }}"
@@ -178,7 +178,11 @@ jobs:
           for output_binary_name in trustd xtask; do
 
             download_binary_name="${output_binary_name}${{ matrix.edition }}"
-            dirname="${output_binary_name}${{ matrix.edition }}-${{ inputs.version }}-${{ matrix.target }}"
+            if [[ "$output_binary_name" == "xtask" ]]; then
+              dirname="${output_binary_name}-${{ inputs.version }}-${{ matrix.target }}"
+            else
+              dirname="${output_binary_name}${{ matrix.edition }}-${{ inputs.version }}-${{ matrix.target }}"
+            fi
 
             mkdir -p "pack/$dirname"
 
