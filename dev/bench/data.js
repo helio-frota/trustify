@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1740820935193,
+  "lastUpdate": 1741018929327,
   "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
@@ -4141,6 +4141,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/helio-frota/trustify/commit/4fd6dfdc557871ade30cfd009933bbf562085d99"
         },
         "date": 1740820933943,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 7,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": true,
+          "id": "4a1e7cde66c409c368e6f1c46f6fb91bb1e31afc",
+          "message": "build: removes unused dependencies",
+          "timestamp": "2025-03-03T15:06:55Z",
+          "tree_id": "bbdc65b963812516a3b8699c07f982358244f14f",
+          "url": "https://github.com/helio-frota/trustify/commit/4a1e7cde66c409c368e6f1c46f6fb91bb1e31afc"
+        },
+        "date": 1741018928893,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
