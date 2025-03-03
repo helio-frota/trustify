@@ -1,12 +1,15 @@
 name: Build binaries
 
+# on:
+#   workflow_call:
+#     inputs:
+#       version:
+#         required: true
+#         type: string
 on:
-  workflow_call:
-    inputs:
-      version:
-        required: true
-        type: string
-
+  push:
+    branches:
+      - '**'
 jobs:
 
   build:
@@ -166,7 +169,7 @@ jobs:
           cargo cyclonedx -v --spec-version 1.5 --format json --describe binaries --target "${{ matrix.target }}"
 
           mv trustd/trustd_bin.cdx.json "upload/trustd${{ matrix.edition }}-${{ inputs.version }}-${{ matrix.target }}.cdx.json"
-          mv xtask/xtask_bin.cdx.json "upload/xtask${{ matrix.edition }}-${{ inputs.version }}-${{ matrix.target }}.cdx.json"
+          mv xtask/xtask_bin.cdx.json "upload/xtask-${{ inputs.version }}-${{ matrix.target }}.cdx.json"
 
       - name: Move binary
         shell: bash
@@ -196,32 +199,32 @@ jobs:
 
           done
 
-      - name: Archive
-        working-directory: pack
-        shell: bash
-        run: |
-          for dir in */; do
-            # Remove trailing slash from directory name
-            dirname=${dir%/}
+      # - name: Archive
+      #   working-directory: pack
+      #   shell: bash
+      #   run: |
+      #     for dir in */; do
+      #       # Remove trailing slash from directory name
+      #       dirname=${dir%/}
+      #
+      #       # Create a zip file for the sub-directory
+      #       if [[ "${{matrix.archive}}" == "zip" ]]; then
+      #         7z a "../upload/${dirname}.zip" "$dir"
+      #       else
+      #         tar czvf ../upload/${dirname}.tar.gz "$dir"
+      #       fi
+      #     done
 
-            # Create a zip file for the sub-directory
-            if [[ "${{matrix.archive}}" == "zip" ]]; then
-              7z a "../upload/${dirname}.zip" "$dir"
-            else
-              tar czvf ../upload/${dirname}.tar.gz "$dir"
-            fi
-          done
-
-      - name: Upload binary (trustd)
-        uses: actions/upload-artifact@v4
-        with:
-          name: trustd${{ matrix.edition }}-${{ matrix.target }}
-          path: upload/trustd*
-          if-no-files-found: error
-
-      - name: Upload binary (xtask)
-        uses: actions/upload-artifact@v4
-        with:
-          name: xtask${{ matrix.edition }}-${{ matrix.target }}
-          path: upload/xtask*
-          if-no-files-found: error
+      # - name: Upload binary (trustd)
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: trustd${{ matrix.edition }}-${{ matrix.target }}
+      #     path: upload/trustd*
+      #     if-no-files-found: error
+      #
+      # - name: Upload binary (xtask)
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: xtask-${{ matrix.target }}
+      #     path: upload/xtask*
+      #     if-no-files-found: error
