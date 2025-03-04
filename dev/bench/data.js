@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1741018929327,
+  "lastUpdate": 1741113249043,
   "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
@@ -4170,6 +4170,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/helio-frota/trustify/commit/4a1e7cde66c409c368e6f1c46f6fb91bb1e31afc"
         },
         "date": 1741018928893,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 7,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jfuller@redhat.com",
+            "name": "JimFuller-RedHat",
+            "username": "JimFuller-RedHat"
+          },
+          "committer": {
+            "email": "81251736+JimFuller-RedHat@users.noreply.github.com",
+            "name": "Jim Fuller",
+            "username": "JimFuller-RedHat"
+          },
+          "distinct": true,
+          "id": "2bd2413c6dc1798eba3982abcd3ae1593652bcc2",
+          "message": "chore: add analysis graph endpoint test for cdx rh product variant",
+          "timestamp": "2025-03-04T14:44:03Z",
+          "tree_id": "d8991263e9ee41f590a727b62117bda53f6d3616",
+          "url": "https://github.com/helio-frota/trustify/commit/2bd2413c6dc1798eba3982abcd3ae1593652bcc2"
+        },
+        "date": 1741113247776,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
