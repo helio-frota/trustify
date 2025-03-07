@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1741175122032,
+  "lastUpdate": 1741378071366,
   "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
@@ -4228,6 +4228,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/helio-frota/trustify/commit/513d1aeb9460eb4e41c9e66bb123affaeecd392f"
         },
         "date": 1741175121201,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "c24361b504e6de8f92d20479a65f5261626b60c6",
+          "message": "chore: prepare release 0.2.9",
+          "timestamp": "2025-03-07T12:08:54Z",
+          "tree_id": "6fc3e4378e072cb4bd86a9ee11e255d485016c99",
+          "url": "https://github.com/helio-frota/trustify/commit/c24361b504e6de8f92d20479a65f5261626b60c6"
+        },
+        "date": 1741378070490,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
