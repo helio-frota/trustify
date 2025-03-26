@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1742985492130,
+  "lastUpdate": 1742994012087,
   "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
@@ -4286,6 +4286,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/helio-frota/trustify/commit/9a2efbc2ecce0ca138f417aa7dcaca091b5dc449"
         },
         "date": 1742985491384,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "671886903ad6970954876834774c2c69f1ac8634",
+          "message": "feat: add score to response\n\nAlso, add instrumentation.\n\nCloses: #1473",
+          "timestamp": "2025-03-26T11:29:43Z",
+          "tree_id": "f192d4f5847674c786a70d04138ad2870c1b79a7",
+          "url": "https://github.com/helio-frota/trustify/commit/671886903ad6970954876834774c2c69f1ac8634"
+        },
+        "date": 1742994011245,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
