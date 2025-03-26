@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1741378071366,
+  "lastUpdate": 1742985492130,
   "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
@@ -4257,6 +4257,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/helio-frota/trustify/commit/c24361b504e6de8f92d20479a65f5261626b60c6"
         },
         "date": 1741378070490,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "9a2efbc2ecce0ca138f417aa7dcaca091b5dc449",
+          "message": "feat: add pg_stats to the compose database",
+          "timestamp": "2025-03-26T08:47:11Z",
+          "tree_id": "539eb8c8550680931ff7be366cb760d832394079",
+          "url": "https://github.com/helio-frota/trustify/commit/9a2efbc2ecce0ca138f417aa7dcaca091b5dc449"
+        },
+        "date": 1742985491384,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
