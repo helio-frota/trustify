@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1742994012087,
+  "lastUpdate": 1743088061032,
   "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
@@ -4315,6 +4315,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/helio-frota/trustify/commit/671886903ad6970954876834774c2c69f1ac8634"
         },
         "date": 1742994011245,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "committer": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "distinct": true,
+          "id": "0f1f780790463225c21138f478cdab2b71e4d8c9",
+          "message": "fix: add vulnerability details in purl details for product statuses",
+          "timestamp": "2025-03-27T14:17:09Z",
+          "tree_id": "34e22c6d54036ac995966416a8033ffcd9e53db4",
+          "url": "https://github.com/helio-frota/trustify/commit/0f1f780790463225c21138f478cdab2b71e4d8c9"
+        },
+        "date": 1743088059586,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
