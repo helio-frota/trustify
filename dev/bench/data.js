@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1743088061032,
+  "lastUpdate": 1743416124359,
   "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
@@ -4344,6 +4344,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/helio-frota/trustify/commit/0f1f780790463225c21138f478cdab2b71e4d8c9"
         },
         "date": 1743088059586,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "committer": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "distinct": true,
+          "id": "0099fb358a563b22d134db880871b6bde4490b83",
+          "message": "fix: /sbom/by-package api can now sort results by name\n\nfixes: #1476",
+          "timestamp": "2025-03-28T13:38:12Z",
+          "tree_id": "2e9cc561dc2294eecb7b5ed354964f7c771bdc4c",
+          "url": "https://github.com/helio-frota/trustify/commit/0099fb358a563b22d134db880871b6bde4490b83"
+        },
+        "date": 1743416123668,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
