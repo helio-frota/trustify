@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1743428349652,
+  "lastUpdate": 1743589428551,
   "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
@@ -4402,6 +4402,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/helio-frota/trustify/commit/3462f86b416fe21e2ad2df8a8b38e0c20028ed4d"
         },
         "date": 1743428348741,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "committer": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "distinct": true,
+          "id": "9209645aab63a6ba8947fa99c4bc6ac02a2a16f7",
+          "message": "fix: get_purl now deals with missing ns properly\n\nFixes #1456\n\nWe're gonna need get_purl to work properly to migrate the data for",
+          "timestamp": "2025-04-01T17:53:46Z",
+          "tree_id": "02a1054bbc299897c8e5649999b1423851c6bb38",
+          "url": "https://github.com/helio-frota/trustify/commit/9209645aab63a6ba8947fa99c4bc6ac02a2a16f7"
+        },
+        "date": 1743589427803,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
