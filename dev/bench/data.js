@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1751461205103,
+  "lastUpdate": 1751564470161,
   "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
@@ -4489,6 +4489,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/helio-frota/trustify/commit/92c92f60afc4f7304a0acbc7d3fc0234475d97e1"
         },
         "date": 1751461204190,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": true,
+          "id": "c274be3aed5c926ec4b08c75ce409a20274e95c7",
+          "message": "chore: prepares for future rust update",
+          "timestamp": "2025-07-03T15:30:05Z",
+          "tree_id": "24f22cf7896670f16ab87e7bfcfbb375668b5752",
+          "url": "https://github.com/helio-frota/trustify/commit/c274be3aed5c926ec4b08c75ce409a20274e95c7"
+        },
+        "date": 1751564469404,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
