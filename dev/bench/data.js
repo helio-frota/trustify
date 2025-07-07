@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1751622550681,
+  "lastUpdate": 1751887303464,
   "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
@@ -4547,6 +4547,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/helio-frota/trustify/commit/bf01b56cbec15f5dd9220dae4a4efc941bbc7733"
         },
         "date": 1751622549515,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "ae658b51d18b11ef7818919f094e769840e9acb6",
+          "message": "chore: more instrumentation when fetching advisories",
+          "timestamp": "2025-07-04T14:47:17Z",
+          "tree_id": "cc3e7c9bbb356c8a88dee480f757929f46c587fd",
+          "url": "https://github.com/helio-frota/trustify/commit/ae658b51d18b11ef7818919f094e769840e9acb6"
+        },
+        "date": 1751887302243,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
