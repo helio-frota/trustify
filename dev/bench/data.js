@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1752154497073,
+  "lastUpdate": 1752246171448,
   "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
@@ -4639,6 +4639,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 9,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "48cf6187216ad0614df26ab4853fee4c478f293c",
+          "message": "chore: move OTEL compose to deploy directory",
+          "timestamp": "2025-07-11T13:26:32Z",
+          "tree_id": "0398a5da171d0d3a82fdda901821d192feef7b04",
+          "url": "https://github.com/helio-frota/trustify/commit/48cf6187216ad0614df26ab4853fee4c478f293c"
+        },
+        "date": 1752246170456,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
