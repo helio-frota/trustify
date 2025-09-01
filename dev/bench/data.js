@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756376799867,
-  "repoUrl": "https://github.com/trustification/trustify",
+  "lastUpdate": 1756732945281,
+  "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
       {
@@ -13363,6 +13363,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/trustification/trustify/commit/2d660c972ef94daa3d2bf98ca8caa655ad6a128a"
         },
         "date": 1756376798564,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "committer": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "distinct": false,
+          "id": "176bf6d3e0db385848ba8420e95aa0e09ab0c9f5",
+          "message": "chore: update UI repo link\n\nSigned-off-by: Dejan Bosanac <dbosanac@redhat.com>",
+          "timestamp": "2025-09-01T12:59:57Z",
+          "tree_id": "4bd68f042cd13fbfb0056370fe7ecafba175a7b7",
+          "url": "https://github.com/guacsec/trustify/commit/176bf6d3e0db385848ba8420e95aa0e09ab0c9f5"
+        },
+        "date": 1756732944149,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
