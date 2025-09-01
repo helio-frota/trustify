@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756750374796,
+  "lastUpdate": 1756754790898,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -13421,6 +13421,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/5421987887c38e63ed5fc881c03368670f35d85b"
         },
         "date": 1756750372986,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": true,
+          "id": "d8bf426329ae0504a6361d7fd6f855d9b1f5df43",
+          "message": "chore(deps): bump sha.js from 2.4.11 to 2.4.12 in /docs/book\n\nBumps [sha.js](https://github.com/crypto-browserify/sha.js) from 2.4.11 to 2.4.12.\n- [Changelog](https://github.com/browserify/sha.js/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/crypto-browserify/sha.js/compare/v2.4.11...v2.4.12)\n\n---\nupdated-dependencies:\n- dependency-name: sha.js\n  dependency-version: 2.4.12\n  dependency-type: indirect\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2025-09-01T19:03:17Z",
+          "tree_id": "91d5093665db31cacd30cc14eed9e01b6de8e02c",
+          "url": "https://github.com/guacsec/trustify/commit/d8bf426329ae0504a6361d7fd6f855d9b1f5df43"
+        },
+        "date": 1756754789739,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
