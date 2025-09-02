@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756828095198,
+  "lastUpdate": 1756831383971,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -13508,6 +13508,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/5c212793d23fb8ad00adf01b2aa37acd18c93291"
         },
         "date": 1756828094266,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "committer": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "distinct": true,
+          "id": "e52c5c9674e4b43f2d3ace2037fcf9f25d48d947",
+          "message": "Leave it to the caller to ignore the error\n\nSimplifies the logic, thanks @dejanb",
+          "timestamp": "2025-09-02T16:20:01Z",
+          "tree_id": "21fd317f6aa99f6489df7bb2a6b27025819ba573",
+          "url": "https://github.com/guacsec/trustify/commit/e52c5c9674e4b43f2d3ace2037fcf9f25d48d947"
+        },
+        "date": 1756831382842,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
