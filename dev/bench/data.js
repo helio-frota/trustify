@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756817175265,
+  "lastUpdate": 1756828095198,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -13479,6 +13479,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/898dc46cb73bc6a68214d30833d8599fbfcb354c"
         },
         "date": 1756817174400,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": true,
+          "id": "5c212793d23fb8ad00adf01b2aa37acd18c93291",
+          "message": "chore: changing remaining refs from trustification to guacsec\n\nSigned-off-by: Helio Frota <00hf11@gmail.com>",
+          "timestamp": "2025-09-02T15:19:33Z",
+          "tree_id": "50b02066eb3066af97830ce407c3e3aa3e7087aa",
+          "url": "https://github.com/guacsec/trustify/commit/5c212793d23fb8ad00adf01b2aa37acd18c93291"
+        },
+        "date": 1756828094266,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
