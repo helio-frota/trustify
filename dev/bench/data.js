@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756376799867,
-  "repoUrl": "https://github.com/trustification/trustify",
+  "lastUpdate": 1756897488985,
+  "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
       {
@@ -13363,6 +13363,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/trustification/trustify/commit/2d660c972ef94daa3d2bf98ca8caa655ad6a128a"
         },
         "date": 1756376798564,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "committer": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "distinct": true,
+          "id": "e52c5c9674e4b43f2d3ace2037fcf9f25d48d947",
+          "message": "Leave it to the caller to ignore the error\n\nSimplifies the logic, thanks @dejanb",
+          "timestamp": "2025-09-02T16:20:01Z",
+          "tree_id": "21fd317f6aa99f6489df7bb2a6b27025819ba573",
+          "url": "https://github.com/helio-frota/trustify/commit/e52c5c9674e4b43f2d3ace2037fcf9f25d48d947"
+        },
+        "date": 1756897487536,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
