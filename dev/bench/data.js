@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756831383971,
+  "lastUpdate": 1756897865718,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -13537,6 +13537,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/e52c5c9674e4b43f2d3ace2037fcf9f25d48d947"
         },
         "date": 1756831382842,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": true,
+          "id": "7d9b6b7361ab33ba449ad1a7d98a43af25a04906",
+          "message": "chore(deps): bump tracing-subscriber from 0.3.19 to 0.3.20\n\nBumps [tracing-subscriber](https://github.com/tokio-rs/tracing) from 0.3.19 to 0.3.20.\n- [Release notes](https://github.com/tokio-rs/tracing/releases)\n- [Commits](https://github.com/tokio-rs/tracing/compare/tracing-subscriber-0.3.19...tracing-subscriber-0.3.20)\n\n---\nupdated-dependencies:\n- dependency-name: tracing-subscriber\n  dependency-version: 0.3.20\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2025-09-03T10:38:56Z",
+          "tree_id": "2c313c105f31d94db897143048242292b3e46b66",
+          "url": "https://github.com/guacsec/trustify/commit/7d9b6b7361ab33ba449ad1a7d98a43af25a04906"
+        },
+        "date": 1756897864528,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
