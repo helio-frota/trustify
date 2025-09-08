@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757336475682,
+  "lastUpdate": 1757342153232,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -13653,6 +13653,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/dc2d42c6ed10143c7a3bb96e086b780b50606428"
         },
         "date": 1757336473875,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "c39e99c3be466c9827515d0b133bbeab4d7badf1",
+          "message": "chore: update Rust and deps",
+          "timestamp": "2025-09-08T13:51:55Z",
+          "tree_id": "d97e0b969a33e6d28e95d77f39978524147fd034",
+          "url": "https://github.com/guacsec/trustify/commit/c39e99c3be466c9827515d0b133bbeab4d7badf1"
+        },
+        "date": 1757342151985,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
