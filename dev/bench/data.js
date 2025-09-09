@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757342153232,
+  "lastUpdate": 1757409318219,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -13682,6 +13682,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/c39e99c3be466c9827515d0b133bbeab4d7badf1"
         },
         "date": 1757342151985,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "2965c9cb2826b781e4116552ec0f49cbdb193194",
+          "message": "ci: drop cargo-cross in favor of native arm builder",
+          "timestamp": "2025-09-09T08:45:42Z",
+          "tree_id": "e07b1ba9c2ada2a050e30cca16632f5c4c8b8681",
+          "url": "https://github.com/guacsec/trustify/commit/2965c9cb2826b781e4116552ec0f49cbdb193194"
+        },
+        "date": 1757409316578,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
