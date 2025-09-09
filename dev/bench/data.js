@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757409318219,
+  "lastUpdate": 1757417825602,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -13711,6 +13711,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/2965c9cb2826b781e4116552ec0f49cbdb193194"
         },
         "date": 1757409316578,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "committer": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "distinct": true,
+          "id": "c8a7eae1d4be8fd84f97109e216e480c5326e6b3",
+          "message": "chore: move (and rename) trustify-load-test-runs",
+          "timestamp": "2025-09-09T11:07:42Z",
+          "tree_id": "d821aada6034d4b82d8fc981fa71e0fbe3e96df3",
+          "url": "https://github.com/guacsec/trustify/commit/c8a7eae1d4be8fd84f97109e216e480c5326e6b3"
+        },
+        "date": 1757417823799,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
