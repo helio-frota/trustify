@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757410685458,
+  "lastUpdate": 1757424207649,
   "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
@@ -13513,6 +13513,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 9,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "committer": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "distinct": true,
+          "id": "c8a7eae1d4be8fd84f97109e216e480c5326e6b3",
+          "message": "chore: move (and rename) trustify-load-test-runs",
+          "timestamp": "2025-09-09T11:07:42Z",
+          "tree_id": "d821aada6034d4b82d8fc981fa71e0fbe3e96df3",
+          "url": "https://github.com/helio-frota/trustify/commit/c8a7eae1d4be8fd84f97109e216e480c5326e6b3"
+        },
+        "date": 1757424205855,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
