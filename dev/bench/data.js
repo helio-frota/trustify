@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757338565618,
+  "lastUpdate": 1757410685458,
   "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
@@ -13484,6 +13484,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "2965c9cb2826b781e4116552ec0f49cbdb193194",
+          "message": "ci: drop cargo-cross in favor of native arm builder",
+          "timestamp": "2025-09-09T08:45:42Z",
+          "tree_id": "e07b1ba9c2ada2a050e30cca16632f5c4c8b8681",
+          "url": "https://github.com/helio-frota/trustify/commit/2965c9cb2826b781e4116552ec0f49cbdb193194"
+        },
+        "date": 1757410684201,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
             "unit": "s"
           }
         ]
