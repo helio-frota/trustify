@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757417825602,
+  "lastUpdate": 1757431575784,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -13740,6 +13740,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/c8a7eae1d4be8fd84f97109e216e480c5326e6b3"
         },
         "date": 1757417823799,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "committer": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "distinct": false,
+          "id": "293e4623ad02e11fdf2f3ad596750e212f8c8421",
+          "message": "Log a warning for time parsing error",
+          "timestamp": "2025-09-09T14:43:04Z",
+          "tree_id": "4a0759bcf7f93df3958a123378ddba6082e7cfa6",
+          "url": "https://github.com/guacsec/trustify/commit/293e4623ad02e11fdf2f3ad596750e212f8c8421"
+        },
+        "date": 1757431574006,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
