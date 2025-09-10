@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757431575784,
+  "lastUpdate": 1757497680129,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -13769,6 +13769,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/293e4623ad02e11fdf2f3ad596750e212f8c8421"
         },
         "date": 1757431574006,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "committer": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "distinct": true,
+          "id": "abdf0c7e7d3d3814d83ecbc498c94fb877e53aa3",
+          "message": "chore: remove e2e tests from release workflow\n\ne2e tests are already ran in the UI, so no need to run them here as well.",
+          "timestamp": "2025-09-10T09:20:53Z",
+          "tree_id": "0e4bb8db3f59770c66469acb4a1caf7bf82b56af",
+          "url": "https://github.com/guacsec/trustify/commit/abdf0c7e7d3d3814d83ecbc498c94fb877e53aa3"
+        },
+        "date": 1757497678866,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
