@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757601366090,
+  "lastUpdate": 1758111432261,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -13827,6 +13827,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/3818788ca7f893d3d9bfa03bd71b03216017a857"
         },
         "date": 1757601364699,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mbrophy@redhat.com",
+            "name": "Mark Brophy",
+            "username": "m-brophy"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "edbd41d6a087819a85b007a63b47a1b49c0e38b5",
+          "message": "remove delete vulnerability api method\n\nSigned-off-by: Mark Brophy <mbrophy@redhat.com>",
+          "timestamp": "2025-09-17T11:47:43Z",
+          "tree_id": "64d6d8e648c74a9d0584deda5d2f69d073a45927",
+          "url": "https://github.com/guacsec/trustify/commit/edbd41d6a087819a85b007a63b47a1b49c0e38b5"
+        },
+        "date": 1758111430429,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
