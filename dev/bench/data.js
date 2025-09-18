@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758111432261,
+  "lastUpdate": 1758182072837,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -13856,6 +13856,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/edbd41d6a087819a85b007a63b47a1b49c0e38b5"
         },
         "date": 1758111430429,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": true,
+          "id": "bc02c2b98e2f2b1eae612b763d4d139a622affb0",
+          "message": "TC-2826: removed unused 'show' function\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>",
+          "timestamp": "2025-09-18T07:28:41Z",
+          "tree_id": "c8bf195319bd5a025c1553974a016f5fd0eff119",
+          "url": "https://github.com/guacsec/trustify/commit/bc02c2b98e2f2b1eae612b763d4d139a622affb0"
+        },
+        "date": 1758182071592,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
