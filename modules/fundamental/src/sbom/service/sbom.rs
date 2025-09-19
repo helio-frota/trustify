@@ -93,6 +93,7 @@ impl SbomService {
     }
 
     /// delete one sbom
+    #[instrument(skip(self, connection), err(level=tracing::Level::INFO))]
     pub async fn delete_sbom<C: ConnectionTrait>(
         &self,
         id: Uuid,
