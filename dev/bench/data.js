@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758182072837,
+  "lastUpdate": 1758639993726,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -13890,6 +13890,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "committer": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "distinct": true,
+          "id": "986f992cdf67c0504ccd52f1a0cd7d06f95cad14",
+          "message": "doc(adr): PURL recommendations endpoint\n\nSigned-off-by: Dejan Bosanac <dbosanac@redhat.com>",
+          "timestamp": "2025-09-23T14:03:03Z",
+          "tree_id": "8e3bb715e731ca798207fc2711d9c46e585648bd",
+          "url": "https://github.com/guacsec/trustify/commit/986f992cdf67c0504ccd52f1a0cd7d06f95cad14"
+        },
+        "date": 1758639992387,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 11,
             "unit": "s"
           }
         ]
