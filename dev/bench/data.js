@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758813462379,
+  "lastUpdate": 1758816194680,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -13943,6 +13943,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/66c00d541983f3c99ff7bf0d9eb51c0cc4f5ce2e"
         },
         "date": 1758813460503,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": false,
+          "id": "143a5ae74083a77fb77df81dab4401e831fc2099",
+          "message": "build: upgrade to Rust 1.90.0",
+          "timestamp": "2025-09-25T14:42:34Z",
+          "tree_id": "c1510058ff60d7cb9095c16d3dde82d61d3af540",
+          "url": "https://github.com/guacsec/trustify/commit/143a5ae74083a77fb77df81dab4401e831fc2099"
+        },
+        "date": 1758816192775,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
