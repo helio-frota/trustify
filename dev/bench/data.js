@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758639993726,
+  "lastUpdate": 1758813462379,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -13919,6 +13919,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 11,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": false,
+          "id": "66c00d541983f3c99ff7bf0d9eb51c0cc4f5ce2e",
+          "message": "chore: add index to sbom_package_license and STABLE PARALLEL SAFE\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>",
+          "timestamp": "2025-09-25T14:27:56Z",
+          "tree_id": "639318874707392a188d576e9a2e81023f5a4cb2",
+          "url": "https://github.com/guacsec/trustify/commit/66c00d541983f3c99ff7bf0d9eb51c0cc4f5ce2e"
+        },
+        "date": 1758813460503,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
