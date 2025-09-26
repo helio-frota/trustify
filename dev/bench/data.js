@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758893132025,
+  "lastUpdate": 1758910662636,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14006,6 +14006,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 7,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": false,
+          "id": "9d0f3ac52b6560ff412cd1a945d991446a85a457",
+          "message": "feat: adding gc endpoint",
+          "timestamp": "2025-09-26T17:54:52Z",
+          "tree_id": "c5e0efb6ee85cdd0b785d23dfff7a65c3967c9fd",
+          "url": "https://github.com/guacsec/trustify/commit/9d0f3ac52b6560ff412cd1a945d991446a85a457"
+        },
+        "date": 1758910661367,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
