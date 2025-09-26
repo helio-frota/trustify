@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758816194680,
+  "lastUpdate": 1758893132025,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -13977,6 +13977,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "committer": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "distinct": false,
+          "id": "89bf882d8fb05476f49b79d8c5dd7156bfaf6465",
+          "message": "Add some logging around GC collection and default rate to 1h\n\nAlso changed type of default for more clarity logging durations",
+          "timestamp": "2025-09-26T13:00:27Z",
+          "tree_id": "9314ab0af6d48d99ada092683241853082e4668c",
+          "url": "https://github.com/guacsec/trustify/commit/89bf882d8fb05476f49b79d8c5dd7156bfaf6465"
+        },
+        "date": 1758893130106,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 7,
             "unit": "s"
           }
         ]
