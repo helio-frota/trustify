@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1759139824052,
+  "lastUpdate": 1759221210399,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14059,6 +14059,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/f80e4b798eb761097e98716b156d704f3d2460ad"
         },
         "date": 1759139822760,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": false,
+          "id": "acb46508a2ab5521cb28604749f8efd56e82593e",
+          "message": "chore: refactored into license_filtering\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>",
+          "timestamp": "2025-09-30T08:05:41Z",
+          "tree_id": "9ced67aa37ddc16c1abebea7c6b1b2a9295ddbc2",
+          "url": "https://github.com/guacsec/trustify/commit/acb46508a2ab5521cb28604749f8efd56e82593e"
+        },
+        "date": 1759221208838,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
