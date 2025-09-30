@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1759230683948,
+  "lastUpdate": 1759237974069,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14122,6 +14122,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "distinct": false,
+          "id": "b9dc8ca297a1042bcd1693382a6fc0ebad55ca9f",
+          "message": "chore: add tests for SBOM without CPE\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>",
+          "timestamp": "2025-09-30T12:36:51Z",
+          "tree_id": "b4534e611fb9312f17ce429094c13eb808d058ad",
+          "url": "https://github.com/guacsec/trustify/commit/b9dc8ca297a1042bcd1693382a6fc0ebad55ca9f"
+        },
+        "date": 1759237972144,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
             "unit": "s"
           }
         ]
