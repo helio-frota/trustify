@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1759243542265,
+  "lastUpdate": 1759324984002,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14175,6 +14175,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/7da2e0c6cd2c897683c12d4361350d352bb08172"
         },
         "date": 1759243540864,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": false,
+          "id": "ce1537c2e5c62480cce3e8173bbfeee861ca2bdb",
+          "message": "fix: VersionedPurlStatus doesn't find the status\n\nThe status is always \"unknown\" even if there are proper statuses in the database as\nwrong find function is used.\n\nSigned-off-by: Dejan Bosanac <dbosanac@redhat.com>\nAssisted-by: Gemini",
+          "timestamp": "2025-10-01T12:52:09Z",
+          "tree_id": "da0b598fe61716441c1051f61fc9c8c80a4678c2",
+          "url": "https://github.com/guacsec/trustify/commit/ce1537c2e5c62480cce3e8173bbfeee861ca2bdb"
+        },
+        "date": 1759324982460,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
