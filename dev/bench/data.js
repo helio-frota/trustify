@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1759919508926,
+  "lastUpdate": 1759935096780,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14320,6 +14320,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/2c357b0c0fc69020405ab29809c4ae53ccf6d061"
         },
         "date": 1759919507972,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": true,
+          "id": "8f4eaba3c19a54f8600aaaca003ef0d3dc15b483",
+          "message": "feat: license filter consistent for SBOM packages tab\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>\nAssisted-by: Claude Code",
+          "timestamp": "2025-10-08T14:26:53Z",
+          "tree_id": "30a4c9c6fef01e2bc5372b9a5486aba4bf6b6215",
+          "url": "https://github.com/guacsec/trustify/commit/8f4eaba3c19a54f8600aaaca003ef0d3dc15b483"
+        },
+        "date": 1759935095471,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
