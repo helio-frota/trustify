@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1759753565667,
+  "lastUpdate": 1759904798470,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14262,6 +14262,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/9fdba718d91b8d044145f118f72d7f343249fb43"
         },
         "date": 1759753564358,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": false,
+          "id": "e7108133d4146ac81823d08cc350e9c089a389df",
+          "message": "chore: update otel-rust to 0.31\n\n* Also updates OTELCOL 1.35.0",
+          "timestamp": "2025-10-08T05:37:43Z",
+          "tree_id": "212e3e56d550c91e46f7839db753216d282e4e71",
+          "url": "https://github.com/guacsec/trustify/commit/e7108133d4146ac81823d08cc350e9c089a389df"
+        },
+        "date": 1759904796986,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
