@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1759904798470,
+  "lastUpdate": 1759919508926,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14291,6 +14291,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/e7108133d4146ac81823d08cc350e9c089a389df"
         },
         "date": 1759904796986,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mdessi@redhat.com",
+            "name": "desmax74",
+            "username": "desmax74"
+          },
+          "committer": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "distinct": true,
+          "id": "2c357b0c0fc69020405ab29809c4ae53ccf6d061",
+          "message": "feat: Add support for aibom and cbom detection\n\nThis PR loops through the sbom components and applies kind label if it finds ai or crypto components inside\n\nSigned-off-by: desmax74 <mdessi@redhat.com>",
+          "timestamp": "2025-10-08T10:08:52Z",
+          "tree_id": "fe4f24a9f77c33c9f399d2b8b45901973497e801",
+          "url": "https://github.com/guacsec/trustify/commit/2c357b0c0fc69020405ab29809c4ae53ccf6d061"
+        },
+        "date": 1759919507972,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
