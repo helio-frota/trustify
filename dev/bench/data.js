@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760025695641,
+  "lastUpdate": 1760027265882,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14378,6 +14378,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/f713494c86dd068a10937e35a7d3247fee2a755a"
         },
         "date": 1760025694442,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": true,
+          "id": "05eb19adba9c4ec16379bfd555a933020dfc73fd",
+          "message": "Revert \"feat: adding gc endpoint\"\n\nThis reverts commit 9d0f3ac52b6560ff412cd1a945d991446a85a457.",
+          "timestamp": "2025-10-09T15:52:03Z",
+          "tree_id": "8a7383d9412783159f995308f06fc4e98826a454",
+          "url": "https://github.com/guacsec/trustify/commit/05eb19adba9c4ec16379bfd555a933020dfc73fd"
+        },
+        "date": 1760027263811,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
