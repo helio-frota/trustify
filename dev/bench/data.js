@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1759935096780,
+  "lastUpdate": 1760025695641,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14349,6 +14349,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/8f4eaba3c19a54f8600aaaca003ef0d3dc15b483"
         },
         "date": 1759935095471,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": false,
+          "id": "f713494c86dd068a10937e35a7d3247fee2a755a",
+          "message": "perf: improve 'expand_license_expression' PLSQL function\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>",
+          "timestamp": "2025-10-09T14:59:45Z",
+          "tree_id": "37ca31f7f90973b24ef7693e98a8ec30e2ea7833",
+          "url": "https://github.com/guacsec/trustify/commit/f713494c86dd068a10937e35a7d3247fee2a755a"
+        },
+        "date": 1760025694442,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
