@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760366391069,
+  "lastUpdate": 1760367118755,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14465,6 +14465,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/0c73c44801a7dfa1f8032dd63aadf704cf620fed"
         },
         "date": 1760366389730,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "a79f708611069abc58ab17eb25777e2ed842bdf6",
+          "message": "fix(analysis): properly escape when exporting to graphviz",
+          "timestamp": "2025-10-13T14:24:50Z",
+          "tree_id": "21fc5b7eecedf06a7c9ebe4add0d5e5578f654dc",
+          "url": "https://github.com/guacsec/trustify/commit/a79f708611069abc58ab17eb25777e2ed842bdf6"
+        },
+        "date": 1760367117845,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
