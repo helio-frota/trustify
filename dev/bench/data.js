@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760367118755,
+  "lastUpdate": 1760370015631,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14499,6 +14499,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jkucera@redhat.com",
+            "name": "Jiri Kucera",
+            "username": "i386x"
+          },
+          "committer": {
+            "email": "jkucera@redhat.com",
+            "name": "Jiří Kučera",
+            "username": "i386x"
+          },
+          "distinct": true,
+          "id": "ca800855db2ba43b2a23190123afc683febf5837",
+          "message": "[TC-2795] Add SBOM generating and uploading script\n\nSigned-off-by: Jiří Kučera <jkucera@redhat.com>",
+          "timestamp": "2025-10-13T15:08:01Z",
+          "tree_id": "447ff8cf3fc2518a9717ac5925b35ec9e48e8cd4",
+          "url": "https://github.com/guacsec/trustify/commit/ca800855db2ba43b2a23190123afc683febf5837"
+        },
+        "date": 1760370014177,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
             "unit": "s"
           }
         ]
