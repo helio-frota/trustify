@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760370015631,
+  "lastUpdate": 1760432069262,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14528,6 +14528,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 9,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "noah@santschi-cooney.ch",
+            "name": "Noah Santschi-Cooney",
+            "username": "Strum355"
+          },
+          "committer": {
+            "email": "noah@santschi-cooney.ch",
+            "name": "Noah S-C",
+            "username": "Strum355"
+          },
+          "distinct": false,
+          "id": "fac608a0dba695d93acd4f3fade2c2ecb877e825",
+          "message": "feat(api): recommendations api",
+          "timestamp": "2025-10-14T07:58:40Z",
+          "tree_id": "bbd530e79368b80691125d0da5c7c1ab9bb06457",
+          "url": "https://github.com/guacsec/trustify/commit/fac608a0dba695d93acd4f3fade2c2ecb877e825"
+        },
+        "date": 1760432067388,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
