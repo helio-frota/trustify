@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760432069262,
+  "lastUpdate": 1760610736696,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14552,6 +14552,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/fac608a0dba695d93acd4f3fade2c2ecb877e825"
         },
         "date": 1760432067388,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mdessi@redhat.com",
+            "name": "desmax74",
+            "username": "desmax74"
+          },
+          "committer": {
+            "email": "desmax74@users.noreply.github.com",
+            "name": "Massimiliano Dessì - (Fast Chauffeur)",
+            "username": "desmax74"
+          },
+          "distinct": true,
+          "id": "be39d3b375e466306cb52cf156c0fa093fa72ce6",
+          "message": "CBOM: Cannot read properties of undefined\n\nSigned-off-by: desmax74 <mdessi@redhat.com>",
+          "timestamp": "2025-10-16T10:04:31Z",
+          "tree_id": "67c7f9cf1801cecf1af9106f976d5fd12d88fe75",
+          "url": "https://github.com/guacsec/trustify/commit/be39d3b375e466306cb52cf156c0fa093fa72ce6"
+        },
+        "date": 1760610735402,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
