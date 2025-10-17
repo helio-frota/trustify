@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760610736696,
+  "lastUpdate": 1760711083421,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14581,6 +14581,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/be39d3b375e466306cb52cf156c0fa093fa72ce6"
         },
         "date": 1760610735402,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": true,
+          "id": "e61631e4eb92208ab2c02035079a94bdeb84c1db",
+          "message": "perf: license filtering with CTEs (TC-3006)\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>\nAssisted-by: Claude Code",
+          "timestamp": "2025-10-17T13:35:49Z",
+          "tree_id": "49d03a541fe817c45d25725e4bf4f3ab2432f0d5",
+          "url": "https://github.com/guacsec/trustify/commit/e61631e4eb92208ab2c02035079a94bdeb84c1db"
+        },
+        "date": 1760711081936,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
