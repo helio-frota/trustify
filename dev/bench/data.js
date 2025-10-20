@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760963030661,
+  "lastUpdate": 1760972368655,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14639,6 +14639,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/73a678c4043dc214d0e046d78f47e37c6fdb8619"
         },
         "date": 1760963029283,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "a93ad89f65d86bcc910e55e8e6cf8e23ef45547f",
+          "message": "refactor: rename default OIDC resources to trustify",
+          "timestamp": "2025-10-20T14:30:03Z",
+          "tree_id": "a0a21fcf0d327721599e9dbbb07d2d4921b8f453",
+          "url": "https://github.com/guacsec/trustify/commit/a93ad89f65d86bcc910e55e8e6cf8e23ef45547f"
+        },
+        "date": 1760972367560,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
