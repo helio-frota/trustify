@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760972368655,
+  "lastUpdate": 1760974979687,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14668,6 +14668,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/a93ad89f65d86bcc910e55e8e6cf8e23ef45547f"
         },
         "date": 1760972367560,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": true,
+          "id": "03bae56a21707ba12a78c25178efb684dacddc70",
+          "message": "chore: improves OTEL docs a bit\n\nAssisted-by: Claude Code",
+          "timestamp": "2025-10-20T15:15:09Z",
+          "tree_id": "c8a27d4bef9ba252d73aa01127242a823523005f",
+          "url": "https://github.com/guacsec/trustify/commit/03bae56a21707ba12a78c25178efb684dacddc70"
+        },
+        "date": 1760974978380,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
