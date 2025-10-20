@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760974979687,
+  "lastUpdate": 1760978303982,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14697,6 +14697,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/03bae56a21707ba12a78c25178efb684dacddc70"
         },
         "date": 1760974978380,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "committer": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "distinct": true,
+          "id": "943e52ef300ff623ecbd662ee2b8b2d5ca831cb7",
+          "message": "Affirm the correct message counts for the quay walker runs",
+          "timestamp": "2025-10-20T16:09:06Z",
+          "tree_id": "e13d45145252bc79003c3a9efa99c8e42b42daa2",
+          "url": "https://github.com/guacsec/trustify/commit/943e52ef300ff623ecbd662ee2b8b2d5ca831cb7"
+        },
+        "date": 1760978302855,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
