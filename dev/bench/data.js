@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761228968202,
+  "lastUpdate": 1761235194879,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14784,6 +14784,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/0218951d0df270642a85df61bb13f0ed1cd1b32e"
         },
         "date": 1761228966407,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": true,
+          "id": "4c07d4ac659ffa6814aa82fac13cfdf8a4e4f5f1",
+          "message": "fix: more scalable license filtering condition (TC-3006)\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>\nAssisted-by: Claude Code",
+          "timestamp": "2025-10-23T15:32:37Z",
+          "tree_id": "de37fa467c43fad2b17549b93b4db81eaf1a4159",
+          "url": "https://github.com/guacsec/trustify/commit/4c07d4ac659ffa6814aa82fac13cfdf8a4e4f5f1"
+        },
+        "date": 1761235193403,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
