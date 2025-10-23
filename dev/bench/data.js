@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761048440260,
+  "lastUpdate": 1761228968202,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14755,6 +14755,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/0d1884c125c4f0bd6d5551c2bb950367e5a078a4"
         },
         "date": 1761048438744,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": false,
+          "id": "0218951d0df270642a85df61bb13f0ed1cd1b32e",
+          "message": "fix(metrics): add DefaultRootRouteFormatter for empty paths\n\nWhen using ResourceFiles from https://github.com/kilork/actix-web-static-files,\nroute resolution is skipped, resulting in an empty `http.route` metric\nattribute.\n\nThis commit introduces a custom RouteFormatter implementation\nthat ensures a default route value of \"/\" whenever the request\npath is empty or equals \"/\". This guarantees that route data is properly\nrecorded in metrics when accessing static UI files.\n\nhttps://github.com/open-telemetry/opentelemetry-rust-contrib/blob/main/opentelemetry-instrumentation-actix-web/src/middleware/route_formatter.rs",
+          "timestamp": "2025-10-23T13:29:56Z",
+          "tree_id": "3d202481aa4d56a7868489274f49f6ef58db7a1c",
+          "url": "https://github.com/guacsec/trustify/commit/0218951d0df270642a85df61bb13f0ed1cd1b32e"
+        },
+        "date": 1761228966407,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
