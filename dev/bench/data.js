@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761298250391,
+  "lastUpdate": 1761298854314,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14842,6 +14842,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/440958bcf4a14fc844b195f77a536af61bd33136"
         },
         "date": 1761298248533,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": false,
+          "id": "5bd7c2cabc17b50bfd84a3e79d047b6e0f3856e5",
+          "message": "chore: change analysis status permission",
+          "timestamp": "2025-10-24T09:05:35Z",
+          "tree_id": "beb4d583120fdd1a623998f5c6f34854e2e1c639",
+          "url": "https://github.com/guacsec/trustify/commit/5bd7c2cabc17b50bfd84a3e79d047b6e0f3856e5"
+        },
+        "date": 1761298852976,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
