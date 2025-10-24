@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761298854314,
+  "lastUpdate": 1761316742548,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14871,6 +14871,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/5bd7c2cabc17b50bfd84a3e79d047b6e0f3856e5"
         },
         "date": 1761298852976,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "committer": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "distinct": false,
+          "id": "e7bf11c2bc7933dae402472eb9c13c81dea3fbb7",
+          "message": "Removed the 'spdx/' suffix",
+          "timestamp": "2025-10-24T14:10:00Z",
+          "tree_id": "e7d07619066b75cc35983e556e2fbfd14cd53019",
+          "url": "https://github.com/guacsec/trustify/commit/e7bf11c2bc7933dae402472eb9c13c81dea3fbb7"
+        },
+        "date": 1761316740581,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
