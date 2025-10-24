@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761235194879,
+  "lastUpdate": 1761298250391,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14813,6 +14813,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/4c07d4ac659ffa6814aa82fac13cfdf8a4e4f5f1"
         },
         "date": 1761235193403,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": false,
+          "id": "440958bcf4a14fc844b195f77a536af61bd33136",
+          "message": "ci: fix upload of migration dump",
+          "timestamp": "2025-10-24T09:00:22Z",
+          "tree_id": "a144e7657eef19bf883e8b0b38beb0011d616b19",
+          "url": "https://github.com/guacsec/trustify/commit/440958bcf4a14fc844b195f77a536af61bd33136"
+        },
+        "date": 1761298248533,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
