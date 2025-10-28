@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761658026342,
+  "lastUpdate": 1761658997219,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14963,6 +14963,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 9,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "committer": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "distinct": false,
+          "id": "be68b079bdbbae7a33db121e4c37e90a96e95f2d",
+          "message": "doc: add ADR for exposing purl status version range\n\nAssisted-by: Gemini\nSigned-off-by: Dejan Bosanac <dbosanac@redhat.com>",
+          "timestamp": "2025-10-28T13:17:57Z",
+          "tree_id": "df98235c64effcab24c4f846bc916452e0b902d1",
+          "url": "https://github.com/guacsec/trustify/commit/be68b079bdbbae7a33db121e4c37e90a96e95f2d"
+        },
+        "date": 1761658995217,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
