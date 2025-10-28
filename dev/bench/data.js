@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761658997219,
+  "lastUpdate": 1761662556938,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14987,6 +14987,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/be68b079bdbbae7a33db121e4c37e90a96e95f2d"
         },
         "date": 1761658995217,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "rromerom@redhat.com",
+            "name": "Ruben Romero Montes",
+            "username": "ruromero"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": true,
+          "id": "1ae7fd230bb707e0faf7e6318be87497f6824745",
+          "message": "fix: update TRUSTD_DEVMODE_ADDITIONAL_CLIENTS env var\n\nSigned-off-by: Ruben Romero Montes <rromerom@redhat.com>",
+          "timestamp": "2025-10-28T14:15:46Z",
+          "tree_id": "6c436acc1024f3a6f59241b1103e104e17a8d3ba",
+          "url": "https://github.com/guacsec/trustify/commit/1ae7fd230bb707e0faf7e6318be87497f6824745"
+        },
+        "date": 1761662554812,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
