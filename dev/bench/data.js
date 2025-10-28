@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761581144607,
+  "lastUpdate": 1761658026342,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -14934,6 +14934,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "rromerom@redhat.com",
+            "name": "Ruben Romero Montes",
+            "username": "ruromero"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": false,
+          "id": "a49870406aabe66ab373bec911c332111facb6b1",
+          "message": "chore: update tests\n\nSigned-off-by: Ruben Romero Montes <rromerom@redhat.com>",
+          "timestamp": "2025-10-28T13:00:15Z",
+          "tree_id": "47a89d3de8151a24733b7fd54862ec77100bb33d",
+          "url": "https://github.com/guacsec/trustify/commit/a49870406aabe66ab373bec911c332111facb6b1"
+        },
+        "date": 1761658024308,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
             "unit": "s"
           }
         ]
