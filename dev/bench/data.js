@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761824706735,
+  "lastUpdate": 1761825501040,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15108,6 +15108,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jkucera@redhat.com",
+            "name": "Jiri Kucera",
+            "username": "i386x"
+          },
+          "committer": {
+            "email": "jkucera@redhat.com",
+            "name": "Jiří Kučera",
+            "username": "i386x"
+          },
+          "distinct": true,
+          "id": "8c6ad23172e66a6c923dcc8f702e6125a8d48723",
+          "message": "[TC-3060] gensbom: Support TPA with certs\n\nDetect provided trust anchors and pass them to `curl`.\n\nSigned-off-by: Jiří Kučera <jkucera@redhat.com>",
+          "timestamp": "2025-10-30T11:28:38Z",
+          "tree_id": "932db37bede7ba0608c916d17cdd5f4e641fc1db",
+          "url": "https://github.com/guacsec/trustify/commit/8c6ad23172e66a6c923dcc8f702e6125a8d48723"
+        },
+        "date": 1761825499140,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
             "unit": "s"
           }
         ]
