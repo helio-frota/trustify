@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761825501040,
+  "lastUpdate": 1761847208574,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15137,6 +15137,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 9,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": false,
+          "id": "ea316fe8d3e798f083c8059c485ffef718aa1ba5",
+          "message": "feat: delete orphaned PURLs (TC-3020)\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>\nAssisted-by: Claude Code",
+          "timestamp": "2025-10-30T17:33:08Z",
+          "tree_id": "1c03a99f54b764d40727b837c69aa1789dd3ed0f",
+          "url": "https://github.com/guacsec/trustify/commit/ea316fe8d3e798f083c8059c485ffef718aa1ba5"
+        },
+        "date": 1761847207549,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
