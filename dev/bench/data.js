@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761822223631,
+  "lastUpdate": 1761822641256,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15050,6 +15050,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 7,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": true,
+          "id": "330d69638319108e4c3869c57d1d158d667831f1",
+          "message": "fix: remove useless async from SbomStatus::new (TC-3085)\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>",
+          "timestamp": "2025-10-30T10:23:29Z",
+          "tree_id": "2cf2b9368fde249f7090bcafc90f68db75bb31ee",
+          "url": "https://github.com/guacsec/trustify/commit/330d69638319108e4c3869c57d1d158d667831f1"
+        },
+        "date": 1761822639258,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
