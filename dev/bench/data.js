@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761847208574,
+  "lastUpdate": 1761851154408,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15161,6 +15161,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/ea316fe8d3e798f083c8059c485ffef718aa1ba5"
         },
         "date": 1761847207549,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "distinct": true,
+          "id": "390833b85e0d4f390834d986b3f2c21d5814f1b3",
+          "message": "test: set LC_COLLATE and TEMPLATE (TC-3070)\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>",
+          "timestamp": "2025-10-30T18:36:58Z",
+          "tree_id": "eaf52b84629fa260fe202092052ab78d9811665d",
+          "url": "https://github.com/guacsec/trustify/commit/390833b85e0d4f390834d986b3f2c21d5814f1b3"
+        },
+        "date": 1761851152410,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
