@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761662556938,
+  "lastUpdate": 1761822223631,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15021,6 +15021,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": false,
+          "id": "7d941ac7e8f8692df0d6ca52a4e2abba253fb1cd",
+          "message": "test: fix up oom test\n\nFirst we need to ensure `teardown` is being run. This can be done by\ndropping the `skip_teardown` attribute.\n\nSecond, we need to refresh the ID. Adding the SQL statement used for\nfuture reference.\n\nThird, add some more explanation about the expectation towards the test.",
+          "timestamp": "2025-10-30T10:22:33Z",
+          "tree_id": "e84810598cdf85ed700d8dd5a6f053bf547d6d52",
+          "url": "https://github.com/guacsec/trustify/commit/7d941ac7e8f8692df0d6ca52a4e2abba253fb1cd"
+        },
+        "date": 1761822222030,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 7,
             "unit": "s"
           }
         ]
