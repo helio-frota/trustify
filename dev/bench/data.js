@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761822641256,
+  "lastUpdate": 1761824706735,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15074,6 +15074,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/330d69638319108e4c3869c57d1d158d667831f1"
         },
         "date": 1761822639258,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": false,
+          "id": "7e4101c10e980604ff53a38525b3a7eea87290b3",
+          "message": "chore: rename adr another adr with same number was added",
+          "timestamp": "2025-10-30T11:03:08Z",
+          "tree_id": "1ab4ccfcc356a2ded93186a1117413004e5adb07",
+          "url": "https://github.com/guacsec/trustify/commit/7e4101c10e980604ff53a38525b3a7eea87290b3"
+        },
+        "date": 1761824705178,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
