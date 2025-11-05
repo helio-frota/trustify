@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761851154408,
+  "lastUpdate": 1762349685156,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15190,6 +15190,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/390833b85e0d4f390834d986b3f2c21d5814f1b3"
         },
         "date": 1761851152410,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": true,
+          "id": "2381bef0a3d808609cb7d9f9b5d69138516cc4ee",
+          "message": "fix: PurlCreator::create race condition (TC-3152)\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>",
+          "timestamp": "2025-11-05T13:08:45Z",
+          "tree_id": "c7cabe199a52c1da0a35622cd1afd9f2c1c4eab0",
+          "url": "https://github.com/guacsec/trustify/commit/2381bef0a3d808609cb7d9f9b5d69138516cc4ee"
+        },
+        "date": 1762349683864,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
