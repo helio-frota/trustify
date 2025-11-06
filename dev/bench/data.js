@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1762439801859,
+  "lastUpdate": 1762440187260,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15277,6 +15277,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/b9dfe4f944ebff507a16a2ca08e564d0544d724b"
         },
         "date": 1762439800618,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": false,
+          "id": "803111d458595cadcf2f245b74541ddb4601e8e6",
+          "message": "perf: fetch_sbom_details optimize CPE-based query (TC-3139)\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>\nAssisted-by: Claude Code",
+          "timestamp": "2025-11-06T14:15:54Z",
+          "tree_id": "5d4651c8265f13d3db2ab11aafbdbcddfe44ec8a",
+          "url": "https://github.com/guacsec/trustify/commit/803111d458595cadcf2f245b74541ddb4601e8e6"
+        },
+        "date": 1762440185637,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
