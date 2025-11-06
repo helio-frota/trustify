@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1762440187260,
+  "lastUpdate": 1762456773798,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15306,6 +15306,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/803111d458595cadcf2f245b74541ddb4601e8e6"
         },
         "date": 1762440185637,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "committer": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "distinct": true,
+          "id": "87c7df43b7d2a4ba2a4565f2add38991edad4d80",
+          "message": "fix: avoid formatting errors with query markdown docs\n\nfixes: #2081",
+          "timestamp": "2025-11-06T18:29:41Z",
+          "tree_id": "2cec1bce8eae507827581a62f75c9a545ac03364",
+          "url": "https://github.com/guacsec/trustify/commit/87c7df43b7d2a4ba2a4565f2add38991edad4d80"
+        },
+        "date": 1762456771932,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
