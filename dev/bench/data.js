@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1762456773798,
+  "lastUpdate": 1762479957492,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15335,6 +15335,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/87c7df43b7d2a4ba2a4565f2add38991edad4d80"
         },
         "date": 1762456771932,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "committer": {
+            "email": "jkucera@redhat.com",
+            "name": "Jiří Kučera",
+            "username": "i386x"
+          },
+          "distinct": true,
+          "id": "80947f55a3bbb05e5459065eed583b3d2ab034cd",
+          "message": "fix: remove check for previously ingested SBOM from gensbom script\n\ndownstream issue: https://issues.redhat.com/browse/TC-3160\n\nThere's no reason to do this. SBOM ingestion is designed to be\nidempotent.",
+          "timestamp": "2025-11-07T01:17:38Z",
+          "tree_id": "6bd34d9ee91f26960144345f4490ef5363edff6d",
+          "url": "https://github.com/guacsec/trustify/commit/80947f55a3bbb05e5459065eed583b3d2ab034cd"
+        },
+        "date": 1762479955664,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
