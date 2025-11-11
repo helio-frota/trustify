@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1762853563390,
+  "lastUpdate": 1762857226670,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15393,6 +15393,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/d0104317e9fadb2e49510d0bf17920c3a2d1eae1"
         },
         "date": 1762853561956,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": true,
+          "id": "f7f88add4c0f47f59a0f69db66c7fffc06ce0d12",
+          "message": "fix: PurlStatusCreator to take PurlStatusEntry ownership (TC-3152)\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>\nAssisted-by: Claude Code",
+          "timestamp": "2025-11-11T09:35:56Z",
+          "tree_id": "e2df983b4784e35ec527a636ba2654384100224d",
+          "url": "https://github.com/guacsec/trustify/commit/f7f88add4c0f47f59a0f69db66c7fffc06ce0d12"
+        },
+        "date": 1762857225402,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
