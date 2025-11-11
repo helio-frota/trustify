@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1762479957492,
+  "lastUpdate": 1762853563390,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15364,6 +15364,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/80947f55a3bbb05e5459065eed583b3d2ab034cd"
         },
         "date": 1762479955664,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "d0104317e9fadb2e49510d0bf17920c3a2d1eae1",
+          "message": "Ensure rejected CVE's are ingested (and queryable) properly\n\nRelates to downstream issue: https://issues.redhat.com/browse/TC-3167",
+          "timestamp": "2025-11-11T09:10:51Z",
+          "tree_id": "7496d019f9d99ebaaffd31252fd3027b2d448ced",
+          "url": "https://github.com/guacsec/trustify/commit/d0104317e9fadb2e49510d0bf17920c3a2d1eae1"
+        },
+        "date": 1762853561956,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
