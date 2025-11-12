@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1762857226670,
+  "lastUpdate": 1762957867495,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15422,6 +15422,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/f7f88add4c0f47f59a0f69db66c7fffc06ce0d12"
         },
         "date": 1762857225402,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "6d1b57b1be450f3afe7129fb7cd98bd43839a4bc",
+          "message": "ci: switch to macos-15\n\nSee: https://github.com/actions/runner-images/issues/13046",
+          "timestamp": "2025-11-12T13:49:04Z",
+          "tree_id": "4ed2a173f89982ad622e6a7d8f5aae0051ea2897",
+          "url": "https://github.com/guacsec/trustify/commit/6d1b57b1be450f3afe7129fb7cd98bd43839a4bc"
+        },
+        "date": 1762957865713,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
