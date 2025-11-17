@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1762957867495,
+  "lastUpdate": 1763371457777,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15451,6 +15451,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/6d1b57b1be450f3afe7129fb7cd98bd43839a4bc"
         },
         "date": 1762957865713,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": true,
+          "id": "8af5206ce9c63a24e66fcb455ea9c1327b4c01ce",
+          "message": "fix: SBOM details filters out the deprecated advisories (TC-3191)\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>\nAssisted-by: Claude Code",
+          "timestamp": "2025-11-17T09:01:44Z",
+          "tree_id": "82486ebe6681ccbd5c1dd9ed5f84556251c72bc6",
+          "url": "https://github.com/guacsec/trustify/commit/8af5206ce9c63a24e66fcb455ea9c1327b4c01ce"
+        },
+        "date": 1763371456337,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
