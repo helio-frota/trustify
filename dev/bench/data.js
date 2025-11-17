@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763385176925,
+  "lastUpdate": 1763385531948,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15543,6 +15543,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": true,
+          "id": "d60b63a4c88e4431b19834500176b2bf4c1f2236",
+          "message": "build(deps): bump js-yaml in /.github/scripts/map-users\n\nBumps [js-yaml](https://github.com/nodeca/js-yaml) from 4.1.0 to 4.1.1.\n- [Changelog](https://github.com/nodeca/js-yaml/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/nodeca/js-yaml/compare/4.1.0...4.1.1)\n\n---\nupdated-dependencies:\n- dependency-name: js-yaml\n  dependency-version: 4.1.1\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2025-11-17T12:52:36Z",
+          "tree_id": "ed5619dd7b1c02e19dde9d5ff72b0c0ed6ba1a14",
+          "url": "https://github.com/guacsec/trustify/commit/d60b63a4c88e4431b19834500176b2bf4c1f2236"
+        },
+        "date": 1763385530155,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
             "unit": "s"
           }
         ]
