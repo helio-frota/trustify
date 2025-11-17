@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763385531948,
+  "lastUpdate": 1763391644638,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15572,6 +15572,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 9,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": true,
+          "id": "d0ad52879e0e84d509431b0e219344573f54febd",
+          "message": "fix: add OrganizationCreator to fix deadlock (TC-3176)\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>\nAssisted-by: Claude Code",
+          "timestamp": "2025-11-17T14:38:58Z",
+          "tree_id": "f98add951d82ec8ecef5056726daa2d987106e60",
+          "url": "https://github.com/guacsec/trustify/commit/d0ad52879e0e84d509431b0e219344573f54febd"
+        },
+        "date": 1763391642758,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
