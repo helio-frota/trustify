@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763380788553,
+  "lastUpdate": 1763385176925,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15509,6 +15509,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/3e58e66c6a8fa6cb1dd1fb86a8e884c361fbff45"
         },
         "date": 1763380787149,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": false,
+          "id": "e7678f3bf6ece153e999554a7e0ad1b2899ef433",
+          "message": "build(deps): bump js-yaml from 4.1.0 to 4.1.1 in /docs/book\n\nBumps [js-yaml](https://github.com/nodeca/js-yaml) from 4.1.0 to 4.1.1.\n- [Changelog](https://github.com/nodeca/js-yaml/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/nodeca/js-yaml/compare/4.1.0...4.1.1)\n\n---\nupdated-dependencies:\n- dependency-name: js-yaml\n  dependency-version: 4.1.1\n  dependency-type: indirect\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2025-11-17T12:50:54Z",
+          "tree_id": "1cd5dbf385ad9083440d3d6da9982d6cfe835be6",
+          "url": "https://github.com/guacsec/trustify/commit/e7678f3bf6ece153e999554a7e0ad1b2899ef433"
+        },
+        "date": 1763385175665,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
