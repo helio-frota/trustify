@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763457406716,
+  "lastUpdate": 1763458218621,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15659,6 +15659,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 9,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": true,
+          "id": "108506ed0c9915ef60ec56a53a962ce5ddec0d6a",
+          "message": "chore: refactor sort_by_id\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>\nAssisted-by: Claude Code",
+          "timestamp": "2025-11-18T09:08:10Z",
+          "tree_id": "03644fe754e0320b7e1abd8dcbc6cf701bcde092",
+          "url": "https://github.com/guacsec/trustify/commit/108506ed0c9915ef60ec56a53a962ce5ddec0d6a"
+        },
+        "date": 1763458217405,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
