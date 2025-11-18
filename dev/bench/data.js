@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763391644638,
+  "lastUpdate": 1763456430199,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15596,6 +15596,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/d0ad52879e0e84d509431b0e219344573f54febd"
         },
         "date": 1763391642758,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": false,
+          "id": "e96aafb83b86f14d16e43eb2adfe17216e9f4331",
+          "message": "chore: further batch to insert vulnerabilities\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>\nAssisted-by: Claude Code",
+          "timestamp": "2025-11-18T08:38:29Z",
+          "tree_id": "4d4e116de1e72e27c637c6b47769cccb6157354b",
+          "url": "https://github.com/guacsec/trustify/commit/e96aafb83b86f14d16e43eb2adfe17216e9f4331"
+        },
+        "date": 1763456428930,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
