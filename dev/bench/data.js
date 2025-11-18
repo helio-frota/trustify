@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763456430199,
+  "lastUpdate": 1763457406716,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15630,6 +15630,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": false,
+          "id": "78d49ff5ecb10753379b2a64fd028f208e5ed6f5",
+          "message": "chore: refactor vulnerability DB read\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>\nAssisted-by: Claude Code",
+          "timestamp": "2025-11-18T08:53:17Z",
+          "tree_id": "082fac71c39e72c61df6062a1654655299a3b910",
+          "url": "https://github.com/guacsec/trustify/commit/78d49ff5ecb10753379b2a64fd028f208e5ed6f5"
+        },
+        "date": 1763457405144,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
             "unit": "s"
           }
         ]
