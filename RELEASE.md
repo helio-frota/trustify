@@ -168,3 +168,46 @@ by:
 ```cargo
 trustify-ui = { git = "https://github.com/guacsec/trustify-ui.git", branch = "release/x.y.z" }
 ```
+
+## Releasing the minor version
+
+When releasing the minor version, there's a subset of steps that needs to be done.
+Here's the example releasing version `0.4.4` from `release/0.4.z` branch with all the commits for the release cherry-picked into it:
+
+* Make sure you are starting with an updated release branch
+
+```shell
+git checkout -b upstream/release/0.4.z
+git pull -r
+git checkout -b 0.4.4-prepare
+```
+
+* Prepare a release
+
+```shell
+cargo release version 0.4.4
+cargo release version 0.4.4 -x
+cargo update
+cargo xtask precommit
+```
+
+* Push a commit and create a PR **against release branch** (`release/0.4.z` in this case)
+
+```shell
+git commit -S -a -m "chore: prepare release 0.4.4"
+git push upstream 0.4.4-prepare
+```
+
+* Merge PR
+
+* Create (signed) tag.
+
+```shell
+git tag -S v0.4.4
+```
+
+* Push tag, which triggers GitHub release workflow.
+
+```shell
+git push upstream v0.4.4
+```
