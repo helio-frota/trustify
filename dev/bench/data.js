@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763458218621,
+  "lastUpdate": 1763653040783,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15683,6 +15683,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/108506ed0c9915ef60ec56a53a962ce5ddec0d6a"
         },
         "date": 1763458217405,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "62643953+m0baer@users.noreply.github.com",
+            "name": "Jochen",
+            "username": "m0baer"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": false,
+          "id": "a986e4de9ab457dad9503ec7cbc8657a4b32c559",
+          "message": "Add IPv6 hint for trustd-pm",
+          "timestamp": "2025-11-20T14:56:27Z",
+          "tree_id": "54b42f6fbc567af131473716849c77716de477c5",
+          "url": "https://github.com/guacsec/trustify/commit/a986e4de9ab457dad9503ec7cbc8657a4b32c559"
+        },
+        "date": 1763653039606,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
