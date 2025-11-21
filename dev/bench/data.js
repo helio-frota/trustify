@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763722893328,
+  "lastUpdate": 1763727407239,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15741,6 +15741,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/77e02e65de6219206e1b2ad7a18e644e80c5f816"
         },
         "date": 1763722891775,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "e149e96dc198b53c10c6bde8c96b078084112b9e",
+          "message": "refactor: makes changes requested from PR review",
+          "timestamp": "2025-11-21T11:33:18Z",
+          "tree_id": "cd8517fe14ff815d9a03dd97a547e797667e25ff",
+          "url": "https://github.com/guacsec/trustify/commit/e149e96dc198b53c10c6bde8c96b078084112b9e"
+        },
+        "date": 1763727405439,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
