@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763653040783,
+  "lastUpdate": 1763722893328,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15712,6 +15712,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/a986e4de9ab457dad9503ec7cbc8657a4b32c559"
         },
         "date": 1763653039606,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "committer": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "distinct": false,
+          "id": "77e02e65de6219206e1b2ad7a18e644e80c5f816",
+          "message": "fix: upgrade cve library to support 5.2 scheme version\n\nSigned-off-by: Dejan Bosanac <dbosanac@redhat.com>",
+          "timestamp": "2025-11-21T10:31:23Z",
+          "tree_id": "6b083dac93ad2dc7259379b6f8a4480b677b2ec7",
+          "url": "https://github.com/guacsec/trustify/commit/77e02e65de6219206e1b2ad7a18e644e80c5f816"
+        },
+        "date": 1763722891775,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
