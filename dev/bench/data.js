@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763727407239,
+  "lastUpdate": 1763743293160,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15770,6 +15770,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/e149e96dc198b53c10c6bde8c96b078084112b9e"
         },
         "date": 1763727405439,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "mrizzi@users.noreply.github.com",
+            "name": "Marco Rizzi",
+            "username": "mrizzi"
+          },
+          "distinct": true,
+          "id": "9aaf962b917d0f8d267e2e1e58a89c57f57b90d6",
+          "message": "chore: add source_document.id indexes to FKs (TC-3214)\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>\nAssisted-by: Claude Code",
+          "timestamp": "2025-11-21T16:18:21Z",
+          "tree_id": "4569a390b89906f6a18b21c9e94839563269c105",
+          "url": "https://github.com/guacsec/trustify/commit/9aaf962b917d0f8d267e2e1e58a89c57f57b90d6"
+        },
+        "date": 1763743291355,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
