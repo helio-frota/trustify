@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764070676647,
+  "lastUpdate": 1764103799961,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15828,6 +15828,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/f40941af83425789d15bf6efcdf04bf915b00094"
         },
         "date": 1764070675226,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jkucera@redhat.com",
+            "name": "Jiri Kucera",
+            "username": "i386x"
+          },
+          "committer": {
+            "email": "jkucera@redhat.com",
+            "name": "Jiří Kučera",
+            "username": "i386x"
+          },
+          "distinct": true,
+          "id": "9ef153dcf2644f5f10e3c065a89b0165c7548480",
+          "message": "Allow publishing a `gensbom` container\n\nPublish `gensbom` container together with `trustd` and `xtask`\ncontainers so users do not need build it locally.\n\nSigned-off-by: Jiří Kučera <jkucera@redhat.com>",
+          "timestamp": "2025-11-25T20:26:22Z",
+          "tree_id": "f9e8e2337ed087964616bd5fd8c61d68fe5807b6",
+          "url": "https://github.com/guacsec/trustify/commit/9ef153dcf2644f5f10e3c065a89b0165c7548480"
+        },
+        "date": 1764103797980,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
