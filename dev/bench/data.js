@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764155361903,
+  "lastUpdate": 1764175437949,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15886,6 +15886,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/ac5e8465759fd5c1a2d00c02fe165d92a3540dfd"
         },
         "date": 1764155360354,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jkucera@redhat.com",
+            "name": "Jiri Kucera",
+            "username": "i386x"
+          },
+          "committer": {
+            "email": "69799772+ikanias@users.noreply.github.com",
+            "name": "Itsik Kanias",
+            "username": "ikanias"
+          },
+          "distinct": true,
+          "id": "046bf06c6e0a983c13308dbacb912c4683dc4904",
+          "message": "chore: Add `gensbom` also to the latest-release\n\nAdd `gensbom` also to the `latest-release` GitHub workflow.\n\nSigned-off-by: Jiří Kučera <jkucera@redhat.com>",
+          "timestamp": "2025-11-26T16:19:55Z",
+          "tree_id": "70df888fbbc65a94bb15813d16fcb1aeb58467c5",
+          "url": "https://github.com/guacsec/trustify/commit/046bf06c6e0a983c13308dbacb912c4683dc4904"
+        },
+        "date": 1764175436687,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
