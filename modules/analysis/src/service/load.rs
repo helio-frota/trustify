@@ -409,7 +409,7 @@ impl InnerService {
                 .column(cpe::Column::Id)
                 .column_as(Expr::cust(rank_sql), "rank") // Use the selected SQL string
                 .join(JoinType::LeftJoin, sbom_package_relation.def())
-                .join(JoinType::LeftJoin, sbom_package::Relation::Cpe.def())
+                .join(JoinType::LeftJoin, sbom_package::Relation::CpeSbomId.def())
                 .join(
                     JoinType::LeftJoin,
                     sbom_package_cpe_ref::Relation::Cpe.def(),

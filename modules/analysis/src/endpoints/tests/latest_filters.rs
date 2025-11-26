@@ -1,7 +1,7 @@
 use super::req::*;
 use crate::test::caller;
 use rstest::*;
-use serde_json::json;
+use serde_json::{Value, json};
 use test_context::test_context;
 use trustify_test_context::{TrustifyContext, subset::ContainsSubset};
 
@@ -469,4 +469,98 @@ async fn test_tc2578(
 })));
 
     Ok(())
+}
+
+#[test_context(TrustifyContext)]
+#[test_log::test(actix_web::test)]
+async fn tc_3170_3a(ctx: &TrustifyContext) -> Result<(), anyhow::Error> {
+    let app = caller(ctx).await?;
+
+    ctx.ingest_documents([
+        "cyclonedx/rh/latest_filters/container/quay_builder_qemu_rhcos_rhel8_2025-02-24/quay-builder-qemu-rhcos-rhel-8-product.json",
+        "cyclonedx/rh/latest_filters/container/quay_builder_qemu_rhcos_rhel8_2025-02-24/quay-builder-qemu-rhcos-rhel-8-image-index.json",
+        "cyclonedx/rh/latest_filters/container/quay_builder_qemu_rhcos_rhel8_2025-02-24/quay-builder-qemu-rhcos-rhel-8-amd64.json",
+    ])
+        .await?;
+
+    let req = Req {
+        what: What::Q("purl~pkg:oci/quay-builder-qemu-rhcos-rhel8"),
+        ancestors: Some(10),
+        ..Default::default()
+    };
+
+    // request latest
+    let latest_response = app
+        .req(Req {
+            latest: true,
+            ..req
+        })
+        .await?;
+    log::info!("{:?}", latest_response);
+
+    assert_eq!(latest_response["total"], 8);
+
+    Ok(())
+}
+#[test_context(TrustifyContext)]
+#[test_log::test(actix_web::test)]
+async fn tc_3170_3b(ctx: &TrustifyContext) -> Result<(), anyhow::Error> {
+    let app = caller(ctx).await?;
+
+    ctx.ingest_documents([
+        "cyclonedx/rh/latest_filters/container/quay_builder_qemu_rhcos_rhel8_2025-02-24/quay-builder-qemu-rhcos-rhel-8-product.json",
+        "cyclonedx/rh/latest_filters/container/quay_builder_qemu_rhcos_rhel8_2025-02-24/quay-builder-qemu-rhcos-rhel-8-image-index.json",
+        "cyclonedx/rh/latest_filters/container/quay_builder_qemu_rhcos_rhel8_2025-02-24/quay-builder-qemu-rhcos-rhel-8-amd64.json",
+    ])
+        .await?;
+
+    let req = Req {
+        what: What::Q("purl~pkg:oci/quay-builder-qemu-rhcos-rhel8"),
+        ancestors: Some(10),
+        ..Default::default()
+    };
+
+    // request latest
+    let mut latest_response = app
+        .req(Req {
+            latest: true,
+            ..req
+        })
+        .await?;
+
+    sort(&mut latest_response["items"]);
+
+    // request all
+    let mut response = app
+        .req(Req {
+            latest: false,
+            ..req
+        })
+        .await?;
+
+    sort(&mut response["items"]);
+
+    // must yield the same result
+
+    assert_eq!(response, latest_response);
+
+    Ok(())
+}
+
+/// sort all entries by node_id. This includes recursive sorting of ancestors/descendants.
+fn sort(json: &mut Value) {
+    let Value::Array(items) = json else {
+        return;
+    };
+
+    // sort list
+
+    items.sort_unstable_by(|a, b| a["node_id"].as_str().cmp(&b["node_id"].as_str()));
+
+    // now sort child entries
+
+    for item in items {
+        sort(&mut item["ancestors"]);
+        sort(&mut item["descendants"]);
+    }
 }
