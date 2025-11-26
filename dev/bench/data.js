@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764103799961,
+  "lastUpdate": 1764155361903,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15857,6 +15857,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/9ef153dcf2644f5f10e3c065a89b0165c7548480"
         },
         "date": 1764103797980,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jkucera@redhat.com",
+            "name": "Jiri Kucera",
+            "username": "i386x"
+          },
+          "committer": {
+            "email": "jkucera@redhat.com",
+            "name": "Jiří Kučera",
+            "username": "i386x"
+          },
+          "distinct": false,
+          "id": "ac5e8465759fd5c1a2d00c02fe165d92a3540dfd",
+          "message": "fix: Add missing build context\n\nAdd missing build context to `buildah` action to fix failing\npipeline (fixes PR #2136).\n\nSigned-off-by: Jiří Kučera <jkucera@redhat.com>",
+          "timestamp": "2025-11-26T10:45:03Z",
+          "tree_id": "871673a3d10d66759f6e47fbd49d4fea8a1cc01e",
+          "url": "https://github.com/guacsec/trustify/commit/ac5e8465759fd5c1a2d00c02fe165d92a3540dfd"
+        },
+        "date": 1764155360354,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
