@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764233632593,
+  "lastUpdate": 1764261016167,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15944,6 +15944,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/4812166244c6913faa4a6837654f8b8de75c0205"
         },
         "date": 1764233630884,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "noah@santschi-cooney.ch",
+            "name": "Noah Santschi-Cooney",
+            "username": "Strum355"
+          },
+          "committer": {
+            "email": "noah@santschi-cooney.ch",
+            "name": "Noah S-C",
+            "username": "Strum355"
+          },
+          "distinct": true,
+          "id": "6b9d483d840723f9d40f46faefee69ab9f8b0dab",
+          "message": "fix: reinstate original /v2/vulnerability/analyze and introduce /v3/vulnerability/analyze",
+          "timestamp": "2025-11-27T16:05:45Z",
+          "tree_id": "9ca8418531b82f434f0932608d2b779e3155cff5",
+          "url": "https://github.com/guacsec/trustify/commit/6b9d483d840723f9d40f46faefee69ab9f8b0dab"
+        },
+        "date": 1764261014369,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
