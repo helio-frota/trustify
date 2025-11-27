@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764175437949,
+  "lastUpdate": 1764233632593,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -15915,6 +15915,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/046bf06c6e0a983c13308dbacb912c4683dc4904"
         },
         "date": 1764175436687,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mrizzi@redhat.com",
+            "name": "mrizzi",
+            "username": "mrizzi"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": false,
+          "id": "4812166244c6913faa4a6837654f8b8de75c0205",
+          "message": "chore: add warning about IDs required by 'as_ref()'\n\nSigned-off-by: mrizzi <mrizzi@redhat.com>",
+          "timestamp": "2025-11-27T08:27:06Z",
+          "tree_id": "5257bcf568655ce56b7d0a934a8134209bdd783c",
+          "url": "https://github.com/guacsec/trustify/commit/4812166244c6913faa4a6837654f8b8de75c0205"
+        },
+        "date": 1764233630884,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
