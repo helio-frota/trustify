@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764582060920,
+  "lastUpdate": 1764598831386,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16031,6 +16031,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/2cefdee97b46f8e5929960fe61e2604402d4c803"
         },
         "date": 1764582059701,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": false,
+          "id": "e1218eb9439b46d23b2f7c9efd69a08c138adab7",
+          "message": "test(analysis): fix expected results\n\nThe \"before\" version of the loading logic pulled in some \"non-latest\"\ncontent via the loading process. This lead to results (on the top\nlevel) from non-latest SBOMs. This is now fixed, as referenced SBOMs\nare loaded on-demand and are not added to the context search map.",
+          "timestamp": "2025-12-01T13:55:44Z",
+          "tree_id": "49c00afc1471d1fe6ad3344db66fe506b28bec6d",
+          "url": "https://github.com/guacsec/trustify/commit/e1218eb9439b46d23b2f7c9efd69a08c138adab7"
+        },
+        "date": 1764598830596,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
