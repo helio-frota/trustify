@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764321120342,
+  "lastUpdate": 1764582060920,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16002,6 +16002,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/e22474552f61d25419b15e3abc4772d8e0180a24"
         },
         "date": 1764321119207,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jfuller@redhat.com",
+            "name": "JimFuller-RedHat",
+            "username": "JimFuller-RedHat"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "2cefdee97b46f8e5929960fe61e2604402d4c803",
+          "message": "latest-endpoint: fix missing hash checksum in resolve_rh_variant_latest_filter_container_cdx test data and add minor test",
+          "timestamp": "2025-12-01T09:15:04Z",
+          "tree_id": "6efdc70ba067e0750b0ed04262235a9903f4c814",
+          "url": "https://github.com/guacsec/trustify/commit/2cefdee97b46f8e5929960fe61e2604402d4c803"
+        },
+        "date": 1764582059701,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
