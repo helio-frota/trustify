@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764598831386,
+  "lastUpdate": 1764618543475,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16065,6 +16065,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": false,
+          "id": "e46197d2cb9903d009d21928e1a53f57e07d913a",
+          "message": "chore: enable grafana explore feature",
+          "timestamp": "2025-12-01T19:23:42Z",
+          "tree_id": "489cd33bdeec1a9c05a425f009c86040e13b7acd",
+          "url": "https://github.com/guacsec/trustify/commit/e46197d2cb9903d009d21928e1a53f57e07d913a"
+        },
+        "date": 1764618542320,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
             "unit": "s"
           }
         ]
