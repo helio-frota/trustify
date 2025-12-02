@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764618543475,
+  "lastUpdate": 1764679660401,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16094,6 +16094,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 9,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": false,
+          "id": "8338c24ac38451f75344f64e01ed9e518fd2e51c",
+          "message": "chore: free more disk space",
+          "timestamp": "2025-12-02T12:02:47Z",
+          "tree_id": "43422b74e48146d13deeb6cdf29ec3c1aea235c9",
+          "url": "https://github.com/guacsec/trustify/commit/8338c24ac38451f75344f64e01ed9e518fd2e51c"
+        },
+        "date": 1764679659141,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
