@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764679660401,
+  "lastUpdate": 1764863119374,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16118,6 +16118,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/8338c24ac38451f75344f64e01ed9e518fd2e51c"
         },
         "date": 1764679659141,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "noah@santschi-cooney.ch",
+            "name": "Noah Santschi-Cooney",
+            "username": "Strum355"
+          },
+          "committer": {
+            "email": "noah@santschi-cooney.ch",
+            "name": "Noah S-C",
+            "username": "Strum355"
+          },
+          "distinct": true,
+          "id": "eaaf62723bb8d219bb23f8885627e147540bd0a6",
+          "message": "fix: deduplicate vulnerabilities in recommend endpoint",
+          "timestamp": "2025-12-04T14:59:38Z",
+          "tree_id": "eaa67b725040f843f8c38efe62b92d2e459a6a2f",
+          "url": "https://github.com/guacsec/trustify/commit/eaaf62723bb8d219bb23f8885627e147540bd0a6"
+        },
+        "date": 1764863117282,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
