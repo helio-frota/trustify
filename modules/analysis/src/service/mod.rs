@@ -450,9 +450,7 @@ impl AnalysisService {
         let query = query.into();
 
         stream::iter(
-            graphs
-                .iter()
-                .filter(|(sbom_id, graph)| acyclic(*sbom_id, graph)),
+            graphs.iter(), // .filter(|(sbom_id, graph)| acyclic(*sbom_id, graph)),
         )
         .flat_map(|(_, graph)| {
             let create = create.clone();

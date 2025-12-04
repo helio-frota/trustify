@@ -304,7 +304,7 @@ impl InnerService {
                 .into_query(),
             GraphQuery::Component(ComponentReference::Cpe(cpe)) => sbom_node::Entity::find()
                 .join(JoinType::Join, sbom_node::Relation::Package.def())
-                .join(JoinType::Join, sbom_package::Relation::Cpe.def())
+                .join(JoinType::Join, sbom_package::Relation::CpeSbomId.def())
                 .filter(sbom_package_cpe_ref::Column::CpeId.eq(cpe.uuid()))
                 .select_only()
                 .column(sbom_node::Column::SbomId)
@@ -313,7 +313,7 @@ impl InnerService {
             GraphQuery::Query(query) => sbom_node::Entity::find()
                 .join(JoinType::Join, sbom_node::Relation::Package.def())
                 .join(JoinType::LeftJoin, sbom_package::Relation::Purl.def())
-                .join(JoinType::LeftJoin, sbom_package::Relation::Cpe.def())
+                .join(JoinType::LeftJoin, sbom_package::Relation::CpeSbomId.def())
                 .join(
                     JoinType::LeftJoin,
                     sbom_package_cpe_ref::Relation::Cpe.def(),
@@ -416,7 +416,7 @@ impl InnerService {
             E: EntityTrait + Related<sbom::Entity>,
         {
             fn join_cpe(self) -> Self {
-                self.join(JoinType::LeftJoin, sbom_package::Relation::Cpe.def())
+                self.join(JoinType::LeftJoin, sbom_package::Relation::CpeSbomId.def())
                     .join(
                         JoinType::LeftJoin,
                         sbom_package_cpe_ref::Relation::Cpe.def(),
