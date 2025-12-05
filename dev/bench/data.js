@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764863119374,
+  "lastUpdate": 1764920990765,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16152,6 +16152,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "2ba8e4a0e3db99309e3369260a36a250aec85b66",
+          "message": "feat: process reference loops gracefully\n\nInstead of dropping SBOMs which a cycle in references, we not process\nthem but stop once we detected that we processed a node already. We\ndo add a warning in such cases.",
+          "timestamp": "2025-12-05T07:24:01Z",
+          "tree_id": "7c575a59543157c2964f9f19363013f47d39e56e",
+          "url": "https://github.com/guacsec/trustify/commit/2ba8e4a0e3db99309e3369260a36a250aec85b66"
+        },
+        "date": 1764920989173,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
             "unit": "s"
           }
         ]
