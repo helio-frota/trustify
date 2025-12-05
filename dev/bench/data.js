@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764920990765,
+  "lastUpdate": 1764926817697,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16176,6 +16176,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/2ba8e4a0e3db99309e3369260a36a250aec85b66"
         },
         "date": 1764920989173,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": true,
+          "id": "4bf45049380bdadd5a2fd940f93d1325921dfdea",
+          "message": "chore: removes redundant clones\n\nSigned-off-by: Helio Frota <00hf11@gmail.com>",
+          "timestamp": "2025-12-05T09:01:38Z",
+          "tree_id": "39b38a6ff7ed52379009e207b4310b5cd0ed56fe",
+          "url": "https://github.com/guacsec/trustify/commit/4bf45049380bdadd5a2fd940f93d1325921dfdea"
+        },
+        "date": 1764926816246,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
