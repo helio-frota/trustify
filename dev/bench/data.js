@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764926817697,
+  "lastUpdate": 1764929789230,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16210,6 +16210,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 9,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "201fd3ece99ca8f748ba3b50367fe4921a39b31b",
+          "message": "chore: update OTEL collector to 0.140.0\n\nSigned-off-by: Helio Frota <00hf11@gmail.com>",
+          "timestamp": "2025-12-05T09:50:55Z",
+          "tree_id": "724291f36c951826bbd1bdff7319d1a404591481",
+          "url": "https://github.com/guacsec/trustify/commit/201fd3ece99ca8f748ba3b50367fe4921a39b31b"
+        },
+        "date": 1764929787965,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
