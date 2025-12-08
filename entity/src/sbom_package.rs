@@ -33,7 +33,12 @@ pub enum Relation {
         to = "(super::sbom_package_cpe_ref::Column::SbomId, super::sbom_package_cpe_ref::Column::NodeId)"
     )]
     Cpe,
-
+    #[sea_orm(
+        belongs_to = "super::sbom_package_cpe_ref::Entity",
+        from = "(Column::SbomId, Column::NodeId)",
+        to = "(super::sbom_package_cpe_ref::Column::SbomId)"
+    )]
+    CpeSbomId,
     #[sea_orm(
         belongs_to = "super::sbom_package_license::Entity",
         from = "(Column::SbomId, Column::NodeId)",

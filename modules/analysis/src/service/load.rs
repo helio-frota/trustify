@@ -304,7 +304,7 @@ impl InnerService {
                 .into_query(),
             GraphQuery::Component(ComponentReference::Cpe(cpe)) => sbom_node::Entity::find()
                 .join(JoinType::Join, sbom_node::Relation::Package.def())
-                .join(JoinType::Join, sbom_package::Relation::Cpe.def())
+                .join(JoinType::Join, sbom_package::Relation::CpeSbomId.def())
                 .filter(sbom_package_cpe_ref::Column::CpeId.eq(cpe.uuid()))
                 .select_only()
                 .column(sbom_node::Column::SbomId)
@@ -313,7 +313,7 @@ impl InnerService {
             GraphQuery::Query(query) => sbom_node::Entity::find()
                 .join(JoinType::Join, sbom_node::Relation::Package.def())
                 .join(JoinType::LeftJoin, sbom_package::Relation::Purl.def())
-                .join(JoinType::LeftJoin, sbom_package::Relation::Cpe.def())
+                .join(JoinType::LeftJoin, sbom_package::Relation::CpeSbomId.def())
                 .join(
                     JoinType::LeftJoin,
                     sbom_package_cpe_ref::Relation::Cpe.def(),
@@ -345,7 +345,6 @@ impl InnerService {
         }
 
         /// Internal helper function to build ranked query, removing duplication.
-        /// boolean flag controls the PARTITION BY clause.
         ///
         /// Constructs reusable SeaORM query to find and rank related SBOM package information.
         ///
@@ -358,7 +357,7 @@ impl InnerService {
         /// - `cpe_id`: The ID of the related CPE.
         /// - `rank`: A calculated rank column based on the partitioning strategy.
         ///
-        /// When partition_by_name=true we generate a list of same named components by CPE and order by
+        /// We generate a list of same named components by CPE and order by
         /// published and take first result - which ensures it is the latest component.
         ///
         /// This works in /latest/ endpoints queries where we use CPE as input but for /latest/ filters based on exact
@@ -369,34 +368,15 @@ impl InnerService {
         ///
         /// `PARTITION BY cpe.id, sbom_node.name ORDER BY sbom.published DESC`
         ///
-        /// but then we run into join alignment problems where partitioning follows subquery results
-        /// - incorrectly leaking latest and non latest in results.
-        ///
-        /// That is why we just use cpe id partitioning:
-        ///
-        /// `PARTITION BY cpe.id ORDER BY sbom.published DESC`
-        ///
-        /// which returns correctly because name related filters are already performed.
-        ///
-        /// It is worth mentioning that aforementioned CPE queries cannot use CPE only partitioning because we
-        /// need to discriminate on component name (across CPEs) hence special casing both code paths.
-        ///
         /// # Returns
         ///
         ///   An unexecuted `sea_orm::Select<E>` query builder struct.
         ///
-        fn build_ranked_query<E>(partition_by_name: bool) -> Select<E>
+        fn build_ranked_query<E>() -> Select<E>
         where
             E: EntityTrait + Related<sbom::Entity>,
         {
-            // Dynamically select the RANK SQL based on the flag
-            let rank_sql = if partition_by_name {
-                // for CPE queries
-                "RANK() OVER (PARTITION BY sbom_node.name, cpe.id ORDER BY sbom.published DESC)"
-            } else {
-                // for exact/partial name queries
-                "RANK() OVER (PARTITION BY cpe.id ORDER BY sbom.published DESC)"
-            };
+            let rank_sql = "RANK() OVER (PARTITION BY cpe.id ORDER BY sbom.published DESC)";
 
             E::find()
                 .select_only()
@@ -416,7 +396,7 @@ impl InnerService {
             E: EntityTrait + Related<sbom::Entity>,
         {
             fn join_cpe(self) -> Self {
-                self.join(JoinType::LeftJoin, sbom_package::Relation::Cpe.def())
+                self.join(JoinType::LeftJoin, sbom_package::Relation::CpeSbomId.def())
                     .join(
                         JoinType::LeftJoin,
                         sbom_package_cpe_ref::Relation::Cpe.def(),
@@ -428,14 +408,7 @@ impl InnerService {
         where
             E: EntityTrait + Related<sbom::Entity>,
         {
-            build_ranked_query(true)
-        }
-
-        fn find_rank_name<E>() -> Select<E>
-        where
-            E: EntityTrait + Related<sbom::Entity>,
-        {
-            build_ranked_query(false)
+            build_ranked_query()
         }
 
         async fn query_all<C>(subquery: SelectStatement, connection: &C) -> Result<Vec<Uuid>, Error>
@@ -471,7 +444,7 @@ impl InnerService {
                 query_all(subquery.into_query(), connection).await?
             }
             GraphQuery::Component(ComponentReference::Name(name)) => {
-                let subquery = find_rank_name::<sbom_node::Entity>()
+                let subquery = find::<sbom_node::Entity>()
                     .join(JoinType::LeftJoin, sbom_node::Relation::Package.def())
                     .join_cpe()
                     .filter(sbom_node::Column::Name.eq(name));
@@ -479,7 +452,7 @@ impl InnerService {
                 query_all(subquery.into_query(), connection).await?
             }
             GraphQuery::Component(ComponentReference::Purl(purl)) => {
-                let subquery = find_rank_name::<sbom_package_purl_ref::Entity>()
+                let subquery = find::<sbom_package_purl_ref::Entity>()
                     .join(JoinType::LeftJoin, sbom_package::Relation::Purl.def().rev())
                     .join(JoinType::LeftJoin, sbom_node::Relation::Package.def().rev())
                     .join_cpe()
@@ -503,7 +476,7 @@ impl InnerService {
                 query_all(subquery.into_query(), connection).await?
             }
             GraphQuery::Query(query) => {
-                let subquery = find_rank_name::<sbom_node::Entity>()
+                let subquery = find::<sbom_node::Entity>()
                     .join(JoinType::LeftJoin, sbom_node::Relation::Package.def())
                     .join(JoinType::LeftJoin, sbom_package::Relation::Purl.def())
                     .join(
