@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764951436773,
+  "lastUpdate": 1765293897752,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16263,6 +16263,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/de8702c164be9da6601a6c6656f1efe57a39ffc5"
         },
         "date": 1764951434809,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "noah@santschi-cooney.ch",
+            "name": "Noah Santschi-Cooney",
+            "username": "Strum355"
+          },
+          "committer": {
+            "email": "noah@santschi-cooney.ch",
+            "name": "Noah S-C",
+            "username": "Strum355"
+          },
+          "distinct": false,
+          "id": "b10c2f1edf135949c4a919659200f45d99c03330",
+          "message": "feat: include AdvisoryHead in PurlStatus",
+          "timestamp": "2025-12-09T14:58:58Z",
+          "tree_id": "03588a63e6c321cae787f2742e0722fe7b2bf457",
+          "url": "https://github.com/guacsec/trustify/commit/b10c2f1edf135949c4a919659200f45d99c03330"
+        },
+        "date": 1765293896163,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
