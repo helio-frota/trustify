@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1765296865193,
+  "lastUpdate": 1765371954230,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16321,6 +16321,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/48ccbf3464b5ca3f4bd0343f170a92657b89b46a"
         },
         "date": 1765296863875,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jkucera@redhat.com",
+            "name": "Jiri Kucera",
+            "username": "i386x"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "3d9314c94ad49636de61dee9a899e38e4daab980",
+          "message": "doc: Update gensbom README\n\nSigned-off-by: Jiří Kučera <jkucera@redhat.com>",
+          "timestamp": "2025-12-10T12:19:43Z",
+          "tree_id": "62faed6f9e51dfb8096f7aedc87e47c149ad6003",
+          "url": "https://github.com/guacsec/trustify/commit/3d9314c94ad49636de61dee9a899e38e4daab980"
+        },
+        "date": 1765371952743,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
