@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1765371954230,
+  "lastUpdate": 1765439885626,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16350,6 +16350,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/3d9314c94ad49636de61dee9a899e38e4daab980"
         },
         "date": 1765371952743,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "psedlak@redhat.com",
+            "name": "Pavel Sedlák",
+            "username": "queria"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "545028c09f879a77ebd35a32e0b8877834daf47b",
+          "message": "docs(terraform): OpenAPI callback for frontend client\n\nWhen using the OpenAPI (rapidoc) web interface, for obtaining token\nit uses /openapi/oauth-receiver.html as target for callback redirect.\n( as can be seen also in common/infrastructure/src/app/http.rs#L607 )\n\nWhile Cognito requires each callback page to be specified by full URL,\nhaving just domain or top-level url (as in console-url) is not enough.\n\nSo this adds the openapi endpoint directly to allowed CallbackURLs\nfor the fronted client.",
+          "timestamp": "2025-12-11T07:31:09Z",
+          "tree_id": "0823044188cc3330e25b01b46774fc71ade82f55",
+          "url": "https://github.com/guacsec/trustify/commit/545028c09f879a77ebd35a32e0b8877834daf47b"
+        },
+        "date": 1765439883760,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
