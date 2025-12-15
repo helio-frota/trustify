@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1765439885626,
+  "lastUpdate": 1765814768783,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16379,6 +16379,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/545028c09f879a77ebd35a32e0b8877834daf47b"
         },
         "date": 1765439883760,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "c4c34578b77a23642de203248cb21922fa4ea873",
+          "message": "chore(analysis): restructure tests a bit, increase coverage",
+          "timestamp": "2025-12-15T15:16:27Z",
+          "tree_id": "8e55f672e485ffd5e98083d27b26a7ced23f6136",
+          "url": "https://github.com/guacsec/trustify/commit/c4c34578b77a23642de203248cb21922fa4ea873"
+        },
+        "date": 1765814767299,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
