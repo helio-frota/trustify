@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1765814768783,
+  "lastUpdate": 1765883974288,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16408,6 +16408,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/c4c34578b77a23642de203248cb21922fa4ea873"
         },
         "date": 1765814767299,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jfuller@redhat.com",
+            "name": "JimFuller-RedHat",
+            "username": "JimFuller-RedHat"
+          },
+          "committer": {
+            "email": "81251736+JimFuller-RedHat@users.noreply.github.com",
+            "name": "Jim Fuller",
+            "username": "JimFuller-RedHat"
+          },
+          "distinct": false,
+          "id": "648d488693ece4c6bb8560d94bad52ae742517b3",
+          "message": "latest: fix TC-3278 add more test data",
+          "timestamp": "2025-12-16T10:52:30Z",
+          "tree_id": "908419149eaa2f52f48c2cdd4bc2a7a6bad45edd",
+          "url": "https://github.com/guacsec/trustify/commit/648d488693ece4c6bb8560d94bad52ae742517b3"
+        },
+        "date": 1765883972978,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
