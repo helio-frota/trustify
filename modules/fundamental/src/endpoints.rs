@@ -22,6 +22,7 @@ pub fn configure(
     let ingestor_service = IngestorService::new(Graph::new(db.clone()), storage, Some(analysis));
     svc.app_data(web::Data::new(ingestor_service));
 
+    crate::admin::endpoints::configure(svc, db.clone());
     crate::advisory::endpoints::configure(svc, db.clone(), config.advisory_upload_limit);
     crate::license::endpoints::configure(svc, db.clone());
     crate::organization::endpoints::configure(svc, db.clone());

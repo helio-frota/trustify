@@ -24,6 +24,57 @@ paths:
                     type: object
                   version:
                     type: string
+  /api/v2/admin/sbom/prune:
+    post:
+      tags:
+      - admin
+      summary: Prune SBOMs based on ingestion date
+      operationId: pruneSboms
+      parameters:
+      - name: ingested
+        in: query
+        description: |-
+          Number of days ago from current time to prune SBOMs
+          For example, ingested=90 means prune SBOMs ingested more than 90 days ago
+        required: true
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+        style: form
+        example: 90
+      - name: dry_run
+        in: query
+        description: If true, only return the list of SBOMs that would be deleted without actually deleting them
+        required: true
+        schema:
+          type: boolean
+      - name: batch_size
+        in: query
+        description: Number of SBOMs to process in a single batch
+        required: true
+        schema:
+          type: integer
+          format: int64
+          minimum: 0
+      - name: max_concurrent
+        in: query
+        description: Maximum number of concurrent operations
+        required: true
+        schema:
+          type: integer
+          minimum: 0
+      responses:
+        '200':
+          description: List of pruned SBOMs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PrunedSbom'
+        '500':
+          description: Internal server error
   /api/v2/advisory:
     get:
       tags:
@@ -4634,6 +4685,42 @@ components:
           format: int32
           description: The total number of items to be processed.
           minimum: 0
+    PrunedSbom:
+      type: object
+      required:
+      - sbom_id
+      - authors
+      - suppliers
+      - data_licenses
+      - ingested
+      properties:
+        authors:
+          type: array
+          items:
+            type: string
+        data_licenses:
+          type: array
+          items:
+            type: string
+        document_id:
+          type:
+          - string
+          - 'null'
+        ingested:
+          type: string
+          format: date-time
+        published:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        sbom_id:
+          type: string
+          format: uuid
+        suppliers:
+          type: array
+          items:
+            type: string
     Purl:
       type: string
       format: uri
