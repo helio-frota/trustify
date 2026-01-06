@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1765883974288,
+  "lastUpdate": 1767716545714,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16442,6 +16442,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "committer": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "distinct": true,
+          "id": "9618e633dd60abfe95bb3d4224a9c74a34a99af0",
+          "message": "Add From<T> impls for Value enum to simplify caller logic",
+          "timestamp": "2026-01-06T15:54:50Z",
+          "tree_id": "8cceab95e50d2baf4fb36962bce7ddc9b52e0bd6",
+          "url": "https://github.com/guacsec/trustify/commit/9618e633dd60abfe95bb3d4224a9c74a34a99af0"
+        },
+        "date": 1767716544247,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
             "unit": "s"
           }
         ]
