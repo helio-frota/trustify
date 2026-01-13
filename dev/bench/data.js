@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1767716545714,
+  "lastUpdate": 1768302095798,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16466,6 +16466,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/9618e633dd60abfe95bb3d4224a9c74a34a99af0"
         },
         "date": 1767716544247,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "81251736+JimFuller-RedHat@users.noreply.github.com",
+            "name": "Jim Fuller",
+            "username": "JimFuller-RedHat"
+          },
+          "distinct": true,
+          "id": "82ce317042586bb72913f798d7bdcf184e17877b",
+          "message": "test(analysis): drop comment, the outcome is expected.",
+          "timestamp": "2026-01-13T10:10:37Z",
+          "tree_id": "ea3939628e707461467a07763ad0aa9c04532edb",
+          "url": "https://github.com/guacsec/trustify/commit/82ce317042586bb72913f798d7bdcf184e17877b"
+        },
+        "date": 1768302094185,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
