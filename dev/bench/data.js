@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1768302095798,
+  "lastUpdate": 1768384660192,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16500,6 +16500,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 9,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "rromerom@redhat.com",
+            "name": "Ruben Romero Montes",
+            "username": "ruromero"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "693278b24af4ea601219abb5ddac7049540e1f11",
+          "message": "docs: add comment for matching precedence\n\nSigned-off-by: Ruben Romero Montes <rromerom@redhat.com>",
+          "timestamp": "2026-01-14T09:14:58Z",
+          "tree_id": "9bbe853ee954c90b99ee7e83dad6c205f3a10eea",
+          "url": "https://github.com/guacsec/trustify/commit/693278b24af4ea601219abb5ddac7049540e1f11"
+        },
+        "date": 1768384658317,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
