@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1768816461275,
+  "lastUpdate": 1768843538372,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16553,6 +16553,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/63dc503a76c7f5c22552c9340e5cca3a4c57f230"
         },
         "date": 1768816459903,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "committer": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "distinct": false,
+          "id": "6d3ea814b4b44fe16ea8f21724dda5abb0fc7932",
+          "message": "doc(adr): add ADR 00011 for CSAF remediation support",
+          "timestamp": "2026-01-19T16:34:55Z",
+          "tree_id": "27b71b8d396bf78556f9c8c2614db984cade83ce",
+          "url": "https://github.com/guacsec/trustify/commit/6d3ea814b4b44fe16ea8f21724dda5abb0fc7932"
+        },
+        "date": 1768843536898,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
