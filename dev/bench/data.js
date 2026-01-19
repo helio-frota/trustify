@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1768384660192,
+  "lastUpdate": 1768816461275,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16524,6 +16524,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/693278b24af4ea601219abb5ddac7049540e1f11"
         },
         "date": 1768384658317,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "64528432+nam3lum@users.noreply.github.com",
+            "name": "Dadash Guliyev",
+            "username": "nam3lum"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "63dc503a76c7f5c22552c9340e5cca3a4c57f230",
+          "message": "feat: Fix ENV variable in helper conf",
+          "timestamp": "2026-01-19T09:03:29Z",
+          "tree_id": "c790c3ea8c9aaedf03443a2d31438a5245c2be0b",
+          "url": "https://github.com/guacsec/trustify/commit/63dc503a76c7f5c22552c9340e5cca3a4c57f230"
+        },
+        "date": 1768816459903,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
