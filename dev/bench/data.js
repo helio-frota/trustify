@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1768900588822,
+  "lastUpdate": 1768923661252,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16616,6 +16616,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jfuller@redhat.com",
+            "name": "JimFuller-RedHat",
+            "username": "JimFuller-RedHat"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "db28725ce4e1c19bacda00d52b30b888cc54808f",
+          "message": "analysis latest: add tests for TC-2719 confirming components with multiple values in purl field are matched correctly.",
+          "timestamp": "2026-01-20T15:00:08Z",
+          "tree_id": "73d99ac347d37203fb0fc440f51ab150abd24b9d",
+          "url": "https://github.com/guacsec/trustify/commit/db28725ce4e1c19bacda00d52b30b888cc54808f"
+        },
+        "date": 1768923659108,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 7,
             "unit": "s"
           }
         ]
