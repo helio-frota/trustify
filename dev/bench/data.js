@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1768923661252,
+  "lastUpdate": 1768938808833,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16645,6 +16645,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 7,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "committer": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "distinct": true,
+          "id": "c3dc0fe9a2f43141332fcc4820b2cda39be92bd5",
+          "message": "Revert \"refactor: give NodeCreator responsibility for creating all subtypes\"\n\nThis reverts commit 470cd79893f9b54e8fde9088921acfa8fff19758.",
+          "timestamp": "2026-01-20T19:11:09Z",
+          "tree_id": "daea78171326c93cbaaf61804cb818e40091d7d0",
+          "url": "https://github.com/guacsec/trustify/commit/c3dc0fe9a2f43141332fcc4820b2cda39be92bd5"
+        },
+        "date": 1768938807548,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
