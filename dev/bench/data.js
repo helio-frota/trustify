@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1768843538372,
+  "lastUpdate": 1768900588822,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16582,6 +16582,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/6d3ea814b4b44fe16ea8f21724dda5abb0fc7932"
         },
         "date": 1768843536898,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dbosanac@redhat.com",
+            "name": "Dejan Bosanac",
+            "username": "dejanb"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": false,
+          "id": "e88c7a57792067718f8bdc6dc48c5c50ce812199",
+          "message": "feat: implement osv vector parsing\n\nSigned-off-by: Dejan Bosanac <dbosanac@redhat.com>",
+          "timestamp": "2026-01-20T08:25:16Z",
+          "tree_id": "8cf6a4b16077c7c6b5f09b2b9a8d8cda41d2de47",
+          "url": "https://github.com/guacsec/trustify/commit/e88c7a57792067718f8bdc6dc48c5c50ce812199"
+        },
+        "date": 1768900587229,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
