@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1769089710431,
+  "lastUpdate": 1769104275893,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16732,6 +16732,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 7,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": true,
+          "id": "56ee049a4c6500cd5d320606113e0aec614107a3",
+          "message": "perf: Improves a bit the recommend endpoint\n\nAssisted-by: Claude Code",
+          "timestamp": "2026-01-22T17:00:11Z",
+          "tree_id": "c4e46f916c9a8679d04799f4073ccf50bb984af5",
+          "url": "https://github.com/guacsec/trustify/commit/56ee049a4c6500cd5d320606113e0aec614107a3"
+        },
+        "date": 1769104274593,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
