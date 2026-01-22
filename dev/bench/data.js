@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1768938808833,
+  "lastUpdate": 1769077368920,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16669,6 +16669,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/c3dc0fe9a2f43141332fcc4820b2cda39be92bd5"
         },
         "date": 1768938807548,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "committer": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "distinct": true,
+          "id": "bb4926ea7ec5863a8e273cdbdfaa6abc517b1d1f",
+          "message": "remove dependency on upstream branch",
+          "timestamp": "2026-01-22T09:32:17Z",
+          "tree_id": "da88d5bd0cee4a7d5c6d7701bb8c7e419cdb166b",
+          "url": "https://github.com/guacsec/trustify/commit/bb4926ea7ec5863a8e273cdbdfaa6abc517b1d1f"
+        },
+        "date": 1769077366787,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
