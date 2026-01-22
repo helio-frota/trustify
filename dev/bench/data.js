@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1769077368920,
+  "lastUpdate": 1769089710431,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -16703,6 +16703,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "committer": {
+            "email": "jim@crossleys.org",
+            "name": "Jim Crossley",
+            "username": "jcrossley3"
+          },
+          "distinct": true,
+          "id": "4212d2bfde971bb874e8e569c82ac0d4a3622361",
+          "message": "feat: reduce psql noise in build/test output",
+          "timestamp": "2026-01-22T13:10:18Z",
+          "tree_id": "98530535c4cd5cb674cda424eca61307b301400a",
+          "url": "https://github.com/guacsec/trustify/commit/4212d2bfde971bb874e8e569c82ac0d4a3622361"
+        },
+        "date": 1769089709075,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 7,
             "unit": "s"
           }
         ]
