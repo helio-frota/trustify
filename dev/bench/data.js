@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1769104275893,
-  "repoUrl": "https://github.com/guacsec/trustify",
+  "lastUpdate": 1771948347626,
+  "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
       {
@@ -16761,6 +16761,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "d658f8f96e4dbffaf36e2881440ffd49fb6523e0",
+          "message": "ci: skip coverage and benchmark when changes are Markdown-only",
+          "timestamp": "2026-02-24T14:59:54Z",
+          "tree_id": "53ab2cdaea40cc454dbd6bfc172f9e3235764e54",
+          "url": "https://github.com/helio-frota/trustify/commit/d658f8f96e4dbffaf36e2881440ffd49fb6523e0"
+        },
+        "date": 1771948346045,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
             "unit": "s"
           }
         ]
