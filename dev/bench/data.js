@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1771948347626,
+  "lastUpdate": 1772046211860,
   "repoUrl": "https://github.com/helio-frota/trustify",
   "entries": {
     "Benchmark": [
@@ -16785,6 +16785,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/helio-frota/trustify/commit/d658f8f96e4dbffaf36e2881440ffd49fb6523e0"
         },
         "date": 1771948346045,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "00hf11@gmail.com",
+            "name": "Helio Frota",
+            "username": "helio-frota"
+          },
+          "distinct": true,
+          "id": "f53bb689573a246f435fe7ff9861e8d7c591a987",
+          "message": "build(deps): bump minimatch from 3.1.2 to 3.1.4 in /docs/book\n\nBumps [minimatch](https://github.com/isaacs/minimatch) from 3.1.2 to 3.1.4.\n- [Changelog](https://github.com/isaacs/minimatch/blob/main/changelog.md)\n- [Commits](https://github.com/isaacs/minimatch/compare/v3.1.2...v3.1.4)\n\n---\nupdated-dependencies:\n- dependency-name: minimatch\n  dependency-version: 3.1.4\n  dependency-type: indirect\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2026-02-25T15:55:57Z",
+          "tree_id": "3ade0e534d7ce577ef117c6862982d03946edd68",
+          "url": "https://github.com/helio-frota/trustify/commit/f53bb689573a246f435fe7ff9861e8d7c591a987"
+        },
+        "date": 1772046209776,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
