@@ -15,6 +15,16 @@ use trustify_test_context::{TrustifyContext, call::CallService, subset::Contains
 use urlencoding::encode;
 use uuid::Uuid;
 
+async fn recommend(app: &impl CallService, purls: &[&str]) -> Value {
+    app.call_and_read_body_json(
+        TestRequest::post()
+            .uri("/api/v2/purl/recommend")
+            .set_json(json!({ "purls": purls }))
+            .to_request(),
+    )
+    .await
+}
+
 async fn setup(db: &Database, graph: &Graph) -> Result<(), anyhow::Error> {
     let log4j = graph
         .ingest_package(&Purl::from_str("pkg:maven/org.apache/log4j")?, db)
@@ -305,14 +315,14 @@ async fn get_recommendations(ctx: &TrustifyContext) -> Result<(), anyhow::Error>
     .await?;
 
     let app = caller(ctx).await?;
-    let recommendations: Value = app
-        .call_and_read_body_json(
-            TestRequest::post()
-                .uri("/api/v2/purl/recommend")
-                .set_json(json!({"purls": ["pkg:maven/jakarta.el/jakarta.el-api@3.0.3", "pkg:maven/jakarta.el/jakarta.el-api@3.0.3"]}))
-                .to_request(),
-        )
-        .await;
+    let recommendations = recommend(
+        &app,
+        &[
+            "pkg:maven/jakarta.el/jakarta.el-api@3.0.3",
+            "pkg:maven/jakarta.el/jakarta.el-api@3.0.3",
+        ],
+    )
+    .await;
 
     log::info!("{recommendations:#?}");
 
@@ -358,14 +368,7 @@ async fn get_recommendations_no_version(ctx: &TrustifyContext) -> Result<(), any
         .await?;
 
     let app = caller(ctx).await?;
-    let recommendations: Value = app
-        .call_and_read_body_json(
-            TestRequest::post()
-                .uri("/api/v2/purl/recommend")
-                .set_json(json!({"purls": ["pkg:maven/jakarta.el/jakarta.el-api"]}))
-                .to_request(),
-        )
-        .await;
+    let recommendations = recommend(&app, &["pkg:maven/jakarta.el/jakarta.el-api"]).await;
 
     log::info!("{recommendations:#?}");
 
@@ -397,14 +400,7 @@ async fn get_recommendations_dedup(ctx: &TrustifyContext) -> Result<(), anyhow::
     .await?;
 
     let app = caller(ctx).await?;
-    let recommendations: Value = app
-        .call_and_read_body_json(
-            TestRequest::post()
-                .uri("/api/v2/purl/recommend")
-                .set_json(json!({"purls": ["pkg:cargo/hyper@0.14.1"]}))
-                .to_request(),
-        )
-        .await;
+    let recommendations = recommend(&app, &["pkg:cargo/hyper@0.14.1"]).await;
 
     log::info!("{recommendations:#?}");
 
@@ -459,14 +455,7 @@ async fn get_recommendations_other_status(ctx: &TrustifyContext) -> Result<(), a
     }
 
     let app = caller(ctx).await?;
-    let recommendations: Value = app
-        .call_and_read_body_json(
-            TestRequest::post()
-                .uri("/api/v2/purl/recommend")
-                .set_json(json!({"purls": ["pkg:cargo/hyper@0.14.1"]}))
-                .to_request(),
-        )
-        .await;
+    let recommendations = recommend(&app, &["pkg:cargo/hyper@0.14.1"]).await;
 
     log::info!("{recommendations:#?}");
 
@@ -489,14 +478,7 @@ async fn get_recommendations_unknown_purl(ctx: &TrustifyContext) -> Result<(), a
     ctx.ingest_documents(["cve/CVE-2022-45787.json"]).await?;
 
     let app = caller(ctx).await?;
-    let recommendations: Value = app
-        .call_and_read_body_json(
-            TestRequest::post()
-                .uri("/api/v2/purl/recommend")
-                .set_json(json!({"purls": ["pkg:maven/com.example/nonexistent@1.0.0"]}))
-                .to_request(),
-        )
-        .await;
+    let recommendations = recommend(&app, &["pkg:maven/com.example/nonexistent@1.0.0"]).await;
 
     assert_eq!(
         recommendations["recommendations"],
@@ -517,14 +499,7 @@ async fn get_recommendations_no_namespace(ctx: &TrustifyContext) -> Result<(), a
         .await?;
 
     let app = caller(ctx).await?;
-    let recommendations: Value = app
-        .call_and_read_body_json(
-            TestRequest::post()
-                .uri("/api/v2/purl/recommend")
-                .set_json(json!({"purls": ["pkg:cargo/serde@1.0.0"]}))
-                .to_request(),
-        )
-        .await;
+    let recommendations = recommend(&app, &["pkg:cargo/serde@1.0.0"]).await;
 
     assert_eq!(
         recommendations["recommendations"],
@@ -545,14 +520,8 @@ async fn get_recommendations_invalid_version(ctx: &TrustifyContext) -> Result<()
     ctx.ingest_documents(["cve/CVE-2022-45787.json"]).await?;
 
     let app = caller(ctx).await?;
-    let recommendations: Value = app
-        .call_and_read_body_json(
-            TestRequest::post()
-                .uri("/api/v2/purl/recommend")
-                .set_json(json!({"purls": ["pkg:maven/jakarta.el/jakarta.el-api@not-a-version"]}))
-                .to_request(),
-        )
-        .await;
+    let recommendations =
+        recommend(&app, &["pkg:maven/jakarta.el/jakarta.el-api@not-a-version"]).await;
 
     assert_eq!(recommendations["recommendations"], json!({}));
 
@@ -565,18 +534,15 @@ async fn get_recommendations_mixed(ctx: &TrustifyContext) -> Result<(), anyhow::
     ctx.ingest_documents(["cve/CVE-2022-45787.json"]).await?;
 
     let app = caller(ctx).await?;
-    let recommendations: Value = app
-        .call_and_read_body_json(
-            TestRequest::post()
-                .uri("/api/v2/purl/recommend")
-                .set_json(json!({"purls": [
-                    "pkg:maven/jakarta.el/jakarta.el-api@3.0.3",
-                    "pkg:maven/com.example/nonexistent@1.0.0",
-                    "pkg:maven/jakarta.el/jakarta.el-api"
-                ]}))
-                .to_request(),
-        )
-        .await;
+    let recommendations = recommend(
+        &app,
+        &[
+            "pkg:maven/jakarta.el/jakarta.el-api@3.0.3",
+            "pkg:maven/com.example/nonexistent@1.0.0",
+            "pkg:maven/jakarta.el/jakarta.el-api",
+        ],
+    )
+    .await;
 
     let entry = &recommendations["recommendations"]["pkg:maven/jakarta.el/jakarta.el-api@3.0.3"];
     assert_eq!(
@@ -613,14 +579,7 @@ async fn get_recommendations_fallback_package_str(
     .await?;
 
     let app = caller(ctx).await?;
-    let recommendations: Value = app
-        .call_and_read_body_json(
-            TestRequest::post()
-                .uri("/api/v2/purl/recommend")
-                .set_json(json!({"purls": ["pkg:cargo/tokio@1.0.0"]}))
-                .to_request(),
-        )
-        .await;
+    let recommendations = recommend(&app, &["pkg:cargo/tokio@1.0.0"]).await;
 
     let recs = recommendations["recommendations"].as_object().unwrap();
     assert_eq!(recs.len(), 1);
@@ -683,14 +642,7 @@ async fn get_recommendations_fixed_status(ctx: &TrustifyContext) -> Result<(), a
     }
 
     let app = caller(ctx).await?;
-    let recommendations: Value = app
-        .call_and_read_body_json(
-            TestRequest::post()
-                .uri("/api/v2/purl/recommend")
-                .set_json(json!({"purls": ["pkg:cargo/hyper@0.14.1"]}))
-                .to_request(),
-        )
-        .await;
+    let recommendations = recommend(&app, &["pkg:cargo/hyper@0.14.1"]).await;
 
     let entry =
         &recommendations["recommendations"].as_object().unwrap()["pkg:cargo/hyper@0.14.1"][0];
