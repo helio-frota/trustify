@@ -38,6 +38,7 @@ use trustify_entity::{
 };
 use trustify_module_ingestor::common::Deprecation;
 
+/// Composite key identifying a base PURL by type, namespace, and name (without version).
 #[derive(Clone, PartialEq, Eq, Hash)]
 struct PurlKey {
     ty: String,
@@ -45,12 +46,14 @@ struct PurlKey {
     name: String,
 }
 
+/// Vulnerability status record linking a vulnerability ID to its VEX status and remediations.
 struct StatusInfo {
     vuln_id: String,
     status_slug: String,
     remediations: Vec<remediation::Model>,
 }
 
+/// The highest Red Hat patch version selected for a given input PURL, used to build the recommendation.
 struct Winner<'a> {
     purl_string: String,
     versioned_purl: &'a versioned_purl::Model,
@@ -87,6 +90,7 @@ impl PurlKey {
     }
 }
 
+/// A user-supplied PURL paired with its parsed semver version for version comparison.
 struct InputPurl {
     purl: Purl,
     input_version: semver::Version,
@@ -585,6 +589,7 @@ impl PurlService {
         Ok(recommendations)
     }
 
+    /// Batch-loads vulnerability statuses for the winning versioned PURLs, grouped by base PURL ID.
     async fn fetch_vulnerability_statuses<C: ConnectionTrait>(
         winner_base_ids: &[Uuid],
         winner_vp_ids: &[Uuid],
@@ -667,6 +672,7 @@ impl PurlService {
         Ok(statuses_by_base)
     }
 
+    /// Loads qualified PURLs for winning versioned PURLs to resolve full PURL strings with qualifiers.
     async fn fetch_qualified_purl_map<C: ConnectionTrait>(
         winner_vp_ids: &[Uuid],
         connection: &C,
@@ -682,6 +688,7 @@ impl PurlService {
         Ok(by_vp)
     }
 
+    /// Builds a single recommendation entry from a winner, its vulnerability statuses, and qualified PURL.
     fn assemble_recommend_entry(
         winner: &Winner<'_>,
         statuses_by_base: &HashMap<Uuid, Vec<StatusInfo>>,
@@ -731,6 +738,7 @@ impl PurlService {
         }
     }
 
+    /// Batch-fetches base PURL entities for the deduplicated set of input PURLs.
     async fn fetch_base_purls<C: ConnectionTrait>(
         input_purls: &[InputPurl],
         connection: &C,
@@ -749,6 +757,7 @@ impl PurlService {
             .await?)
     }
 
+    /// Loads all versioned PURLs for the given base PURLs, grouped by base PURL ID.
     async fn fetch_versioned_purls_by_base<C: ConnectionTrait>(
         base_purls: &[base_purl::Model],
         connection: &C,
@@ -766,6 +775,7 @@ impl PurlService {
         Ok(by_base)
     }
 
+    /// Selects the versioned PURL with the highest Red Hat pre-release suffix matching the input version.
     fn find_highest_redhat_patch<'a>(
         pattern: &Regex,
         input_version: &semver::Version,
