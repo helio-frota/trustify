@@ -305,9 +305,11 @@ async fn test_purl_license_details(ctx: &TrustifyContext) -> Result<(), anyhow::
     Ok(())
 }
 
+/// Verifies that duplicate input PURLs are deduplicated and recommendations include the correct upgraded package and vulnerabilities.
 #[test_context(TrustifyContext)]
 #[test(actix_web::test)]
 async fn get_recommendations(ctx: &TrustifyContext) -> Result<(), anyhow::Error> {
+    // Given advisories for multiple CVEs are ingested
     ctx.ingest_documents([
         "cve/CVE-2022-45787.json",
         "cve/CVE-2023-28867.json",
@@ -315,6 +317,7 @@ async fn get_recommendations(ctx: &TrustifyContext) -> Result<(), anyhow::Error>
     ])
     .await?;
 
+    // When requesting recommendations for a duplicated PURL
     let app = caller(ctx).await?;
     let recommendations = recommend(
         &app,
@@ -327,6 +330,7 @@ async fn get_recommendations(ctx: &TrustifyContext) -> Result<(), anyhow::Error>
 
     log::info!("{recommendations:#?}");
 
+    // Then a single recommendation entry is returned with both CVEs
     assert_eq!(
         recommendations["recommendations"]
             .as_object()
@@ -362,17 +366,21 @@ async fn get_recommendations(ctx: &TrustifyContext) -> Result<(), anyhow::Error>
     Ok(())
 }
 
+/// Verifies that PURLs without a version produce no recommendations.
 #[test_context(TrustifyContext)]
 #[test(actix_web::test)]
 async fn get_recommendations_no_version(ctx: &TrustifyContext) -> Result<(), anyhow::Error> {
+    // Given advisories are ingested
     ctx.ingest_documents(["cve/CVE-2022-45787.json", "cve/CVE-2023-28867.json"])
         .await?;
 
+    // When requesting recommendations for a PURL without a version
     let app = caller(ctx).await?;
     let recommendations = recommend(&app, &["pkg:maven/jakarta.el/jakarta.el-api"]).await;
 
     log::info!("{recommendations:#?}");
 
+    // Then no recommendations are returned
     assert_eq!(
         recommendations["recommendations"]
             .as_object()
@@ -384,9 +392,11 @@ async fn get_recommendations_no_version(ctx: &TrustifyContext) -> Result<(), any
     Ok(())
 }
 
+/// Verifies that duplicate advisories for the same CVE produce a single vulnerability entry.
 #[test_context(TrustifyContext)]
 #[test(actix_web::test)]
 async fn get_recommendations_dedup(ctx: &TrustifyContext) -> Result<(), anyhow::Error> {
+    // Given a Red Hat package and two duplicate advisories for the same CVE
     ctx.graph
         .ingest_qualified_package(
             &Purl::from_str("pkg:cargo/hyper@0.14.1-redhat-00001")?,
@@ -400,11 +410,13 @@ async fn get_recommendations_dedup(ctx: &TrustifyContext) -> Result<(), anyhow::
     ])
     .await?;
 
+    // When requesting recommendations
     let app = caller(ctx).await?;
     let recommendations = recommend(&app, &["pkg:cargo/hyper@0.14.1"]).await;
 
     log::info!("{recommendations:#?}");
 
+    // Then the recommendation contains a single deduplicated vulnerability
     let entry =
         &recommendations["recommendations"].as_object().unwrap()["pkg:cargo/hyper@0.14.1"][0];
     assert_eq!(entry["vulnerabilities"].as_array().unwrap().len(), 1);
@@ -418,12 +430,14 @@ async fn get_recommendations_dedup(ctx: &TrustifyContext) -> Result<(), anyhow::
     Ok(())
 }
 
+/// Verifies that a custom vulnerability status is reflected in the recommendation response.
 #[test_context(TrustifyContext)]
 #[test(actix_web::test)]
 async fn get_recommendations_other_status(ctx: &TrustifyContext) -> Result<(), anyhow::Error> {
     use sea_orm::{ActiveModelTrait, ColumnTrait, EntityTrait, QueryFilter, Set};
     use trustify_entity::{purl_status, status};
 
+    // Given a package with a vulnerability whose status is overridden to a custom value
     ctx.graph
         .ingest_qualified_package(
             &Purl::from_str("pkg:cargo/hyper@0.14.1-redhat-00001")?,
@@ -455,11 +469,13 @@ async fn get_recommendations_other_status(ctx: &TrustifyContext) -> Result<(), a
         active.update(&ctx.db).await?;
     }
 
+    // When requesting recommendations
     let app = caller(ctx).await?;
     let recommendations = recommend(&app, &["pkg:cargo/hyper@0.14.1"]).await;
 
     log::info!("{recommendations:#?}");
 
+    // Then the vulnerability status reflects the custom status
     let entry =
         &recommendations["recommendations"].as_object().unwrap()["pkg:cargo/hyper@0.14.1"][0];
     let vulns = entry["vulnerabilities"].as_array().unwrap();
@@ -473,6 +489,7 @@ async fn get_recommendations_other_status(ctx: &TrustifyContext) -> Result<(), a
     Ok(())
 }
 
+/// Verifies that PURLs with no matching base package or an unparseable version produce the expected empty response.
 #[test_context(TrustifyContext)]
 #[rstest]
 #[case::unknown_purl(
@@ -489,19 +506,24 @@ async fn get_recommendations_no_match(
     #[case] purl: &str,
     #[case] expected: Value,
 ) -> Result<(), anyhow::Error> {
+    // Given an advisory is ingested
     ctx.ingest_documents(["cve/CVE-2022-45787.json"]).await?;
 
+    // When requesting recommendations for a non-matching PURL
     let app = caller(ctx).await?;
     let recommendations = recommend(&app, &[purl]).await;
 
+    // Then the response matches the expected empty result
     assert_eq!(recommendations["recommendations"], expected);
 
     Ok(())
 }
 
+/// Verifies that recommendations work for PURLs without a namespace (e.g., cargo packages).
 #[test_context(TrustifyContext)]
 #[test(actix_web::test)]
 async fn get_recommendations_no_namespace(ctx: &TrustifyContext) -> Result<(), anyhow::Error> {
+    // Given a Red Hat package with no namespace
     ctx.graph
         .ingest_qualified_package(
             &Purl::from_str("pkg:cargo/serde@1.0.0-redhat-00001")?,
@@ -509,9 +531,11 @@ async fn get_recommendations_no_namespace(ctx: &TrustifyContext) -> Result<(), a
         )
         .await?;
 
+    // When requesting recommendations
     let app = caller(ctx).await?;
     let recommendations = recommend(&app, &["pkg:cargo/serde@1.0.0"]).await;
 
+    // Then the recommendation returns the Red Hat package
     assert_eq!(
         recommendations["recommendations"],
         json!({
@@ -525,11 +549,14 @@ async fn get_recommendations_no_namespace(ctx: &TrustifyContext) -> Result<(), a
     Ok(())
 }
 
+/// Verifies correct handling of mixed input: a known PURL, an unknown PURL, and a versionless PURL.
 #[test_context(TrustifyContext)]
 #[test(actix_web::test)]
 async fn get_recommendations_mixed(ctx: &TrustifyContext) -> Result<(), anyhow::Error> {
+    // Given an advisory is ingested
     ctx.ingest_documents(["cve/CVE-2022-45787.json"]).await?;
 
+    // When requesting recommendations for a mix of known, unknown, and versionless PURLs
     let app = caller(ctx).await?;
     let recommendations = recommend(
         &app,
@@ -541,6 +568,7 @@ async fn get_recommendations_mixed(ctx: &TrustifyContext) -> Result<(), anyhow::
     )
     .await;
 
+    // Then known PURLs get recommendations and unknown PURLs get empty arrays
     let entry = &recommendations["recommendations"]["pkg:maven/jakarta.el/jakarta.el-api@3.0.3"];
     assert_eq!(
         entry[0]["package"],
@@ -558,13 +586,13 @@ async fn get_recommendations_mixed(ctx: &TrustifyContext) -> Result<(), anyhow::
     Ok(())
 }
 
+/// Verifies that the versioned PURL (without qualifiers) is returned as the package string when no qualified PURL exists.
 #[test_context(TrustifyContext)]
 #[test(actix_web::test)]
 async fn get_recommendations_fallback_package_str(
     ctx: &TrustifyContext,
 ) -> Result<(), anyhow::Error> {
-    // Ingest a versioned_purl WITHOUT a qualified_purl to verify the versioned
-    // PURL is returned as the recommended package string
+    // Given a versioned PURL without a qualified PURL
     let base = ctx
         .graph
         .ingest_package(&Purl::from_str("pkg:cargo/tokio")?, &ctx.db)
@@ -575,28 +603,31 @@ async fn get_recommendations_fallback_package_str(
     )
     .await?;
 
+    // When requesting recommendations
     let app = caller(ctx).await?;
     let recommendations = recommend(&app, &["pkg:cargo/tokio@1.0.0"]).await;
 
+    // Then the versioned PURL is returned as the package string
     let recs = recommendations["recommendations"].as_object().unwrap();
     assert_eq!(recs.len(), 1);
 
     let rec_list = recs["pkg:cargo/tokio@1.0.0"].as_array().unwrap();
     assert_eq!(rec_list.len(), 1);
 
-    // Recommendations always return the versioned PURL (without qualifiers)
     let package = rec_list[0]["package"].as_str().unwrap();
     assert_eq!(package, "pkg:cargo/tokio@1.0.0-redhat-00001");
 
     Ok(())
 }
 
+/// Verifies that a "fixed" vulnerability status maps to the Fixed VexStatus and uses the status name in the response.
 #[test_context(TrustifyContext)]
 #[test(actix_web::test)]
 async fn get_recommendations_fixed_status(ctx: &TrustifyContext) -> Result<(), anyhow::Error> {
     use sea_orm::{ActiveModelTrait, ColumnTrait, EntityTrait, QueryFilter, Set};
     use trustify_entity::{purl_status, status};
 
+    // Given a package with a vulnerability whose status is set to "fixed"
     ctx.graph
         .ingest_qualified_package(
             &Purl::from_str("pkg:cargo/hyper@0.14.1-redhat-00001")?,
@@ -606,7 +637,6 @@ async fn get_recommendations_fixed_status(ctx: &TrustifyContext) -> Result<(), a
 
     ctx.ingest_documents(["osv/RUSTSEC-2021-0079.json"]).await?;
 
-    // Override the status to "fixed" to exercise that VexStatus match arm
     let fixed_status = status::Entity::find()
         .filter(status::Column::Slug.eq("fixed"))
         .one(&ctx.db)
@@ -637,9 +667,11 @@ async fn get_recommendations_fixed_status(ctx: &TrustifyContext) -> Result<(), a
         active.update(&ctx.db).await?;
     }
 
+    // When requesting recommendations
     let app = caller(ctx).await?;
     let recommendations = recommend(&app, &["pkg:cargo/hyper@0.14.1"]).await;
 
+    // Then the vulnerability status is reported as "Fixed"
     let entry =
         &recommendations["recommendations"].as_object().unwrap()["pkg:cargo/hyper@0.14.1"][0];
     let vuln = entry["vulnerabilities"]
