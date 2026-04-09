@@ -2,7 +2,7 @@ use std::collections::{HashMap, HashSet};
 
 use crate::{
     Error,
-    common::license_filtering::{LICENSE, build_license_filtering_with_clause},
+    common::license_filtering::LICENSE,
     purl::model::{
         RecommendEntry, VexStatus, VulnerabilityStatus,
         details::{
@@ -14,6 +14,7 @@ use crate::{
         },
     },
 };
+use itertools::Itertools;
 use regex::Regex;
 use sea_orm::{
     ColumnTrait, Condition, ConnectionTrait, EntityTrait, FromQueryResult, LoaderTrait,
@@ -126,6 +127,7 @@ impl PurlService {
         Self {}
     }
 
+    #[instrument(skip(self, connection), err(level=tracing::Level::INFO))]
     pub async fn purl_types<C: ConnectionTrait>(
         &self,
         connection: &C,
@@ -151,6 +153,7 @@ impl PurlService {
         TypeSummary::from_names(&ecosystems, connection).await
     }
 
+    #[instrument(skip(self, connection), err(level=tracing::Level::INFO))]
     pub async fn base_purls_by_type<C: ConnectionTrait>(
         &self,
         r#type: &str,
@@ -171,6 +174,7 @@ impl PurlService {
         })
     }
 
+    #[instrument(skip(self, connection), err(level=tracing::Level::INFO))]
     pub async fn base_purl<C: ConnectionTrait>(
         &self,
         r#type: &str,
@@ -197,6 +201,7 @@ impl PurlService {
         }
     }
 
+    #[instrument(skip(self, connection), err(level=tracing::Level::INFO))]
     pub async fn versioned_purl<C: ConnectionTrait>(
         &self,
         r#type: &str,
@@ -228,6 +233,7 @@ impl PurlService {
         }
     }
 
+    #[instrument(skip(self, connection), err(level=tracing::Level::INFO))]
     pub async fn base_purl_by_uuid<C: ConnectionTrait>(
         &self,
         base_purl_uuid: &Uuid,
@@ -245,6 +251,7 @@ impl PurlService {
         }
     }
 
+    #[instrument(skip(self, connection), err(level=tracing::Level::INFO))]
     pub async fn base_purl_by_purl<C: ConnectionTrait>(
         &self,
         purl: &Purl,
@@ -269,6 +276,7 @@ impl PurlService {
         }
     }
 
+    #[instrument(skip(self, connection), err(level=tracing::Level::INFO))]
     pub async fn versioned_purl_by_uuid<C: ConnectionTrait>(
         &self,
         purl_version_uuid: &Uuid,
@@ -286,6 +294,7 @@ impl PurlService {
         }
     }
 
+    #[instrument(skip(self, connection), err(level=tracing::Level::INFO))]
     pub async fn versioned_purl_by_purl<C: ConnectionTrait>(
         &self,
         purl: &Purl,
@@ -320,6 +329,7 @@ impl PurlService {
         }
     }
 
+    #[instrument(skip(self, connection), err(level=tracing::Level::INFO))]
     pub async fn purl_by_purl<C: ConnectionTrait>(
         &self,
         purl: &Purl,
@@ -377,7 +387,7 @@ impl PurlService {
         })
     }
 
-    #[instrument(skip(self, connection), err)]
+    #[instrument(skip(self, connection), err(level=tracing::Level::INFO))]
     pub async fn purls<C: ConnectionTrait>(
         &self,
         query: Query,
@@ -405,23 +415,31 @@ impl PurlService {
             .get_constraint_for_field(LICENSE)
             .map(|constraint| q(&format!("{constraint}")))
         {
-            #[derive(Debug, FromQueryResult)]
-            struct QualifiedPurlIdResult {
-                id: Uuid,
-            }
+            let base = || {
+                sbom_node_purl_ref::Entity::find()
+                    .select_only()
+                    .distinct()
+                    .column(sbom_node_purl_ref::Column::QualifiedPurlId)
+                    .join(
+                        JoinType::InnerJoin,
+                        sbom_node_purl_ref::Relation::Node.def(),
+                    )
+                    .join(
+                        JoinType::InnerJoin,
+                        sbom_node::Relation::PackageLicense.def(),
+                    )
+            };
 
-            // Build the CTEs for license filtering
-            let with_clause = build_license_filtering_with_clause();
-
-            let mut statement = sbom_package_purl_ref::Entity::find()
-                .distinct()
-                .select_only()
-                .column_as(sbom_package_purl_ref::Column::QualifiedPurlId, "id")
+            // Apply as subquery filter using UNION to allow index lookups instead of a full table scan
+            let mut spdx_select = base()
                 .join(
-                    JoinType::Join,
-                    sbom_package_purl_ref::Relation::Package.def(),
+                    JoinType::InnerJoin,
+                    sbom_package_license::Relation::SbomLicenseExpanded.def(),
                 )
-                .join(JoinType::Join, sbom_package::Relation::PackageLicense.def())
+                .join(
+                    JoinType::InnerJoin,
+                    sbom_license_expanded::Relation::ExpandedLicense.def(),
+                )
                 .filtering_with(
                     license_query.clone(),
                     Columns::default()
@@ -430,54 +448,11 @@ impl PurlService {
                             LICENSE => Some(format!("expanded_text{operator}{value}")),
                             _ => None,
                         }),
-                )?
-                .into_query();
-            let x = statement
-                .join(
-                    JoinType::Join,
-                    Alias::new("expanded"),
-                    Condition::all()
-                        .add(
-                            Expr::col((
-                                sbom_package_license::Entity,
-                                sbom_package_license::Column::SbomId,
-                            ))
-                            .equals((Alias::new("expanded"), Alias::new("sbom_id"))),
-                        )
-                        .add(
-                            Expr::col((
-                                sbom_package_license::Entity,
-                                sbom_package_license::Column::LicenseId,
-                            ))
-                            .equals((Alias::new("expanded"), Alias::new("license_id"))),
-                        ),
-                )
-                .to_owned();
-            let main_query = x.with(with_clause);
-            let (sql, values) = main_query.build(PostgresQueryBuilder);
-            let qualified_purl_ids_filtered_by_license: Vec<Uuid> =
-                QualifiedPurlIdResult::find_by_statement(Statement::from_sql_and_values(
-                    DbBackend::Postgres,
-                    sql,
-                    values,
-                ))
-                .all(connection)
-                .await?
-                .into_iter()
-                .map(|r| r.id)
-                .collect();
+                )?;
 
-            let cyclonedx_subquery = sbom_package_purl_ref::Entity::find()
-                .distinct()
-                .select_only()
-                .column(sbom_package_purl_ref::Column::QualifiedPurlId)
+            let cyclonedx_select = base()
                 .join(
-                    JoinType::Join,
-                    sbom_package_purl_ref::Relation::Package.def(),
-                )
-                .join(JoinType::Join, sbom_package::Relation::PackageLicense.def())
-                .join(
-                    JoinType::Join,
+                    JoinType::InnerJoin,
                     sbom_package_license::Relation::License.def(),
                 )
                 .filtering_with(
@@ -488,21 +463,16 @@ impl PurlService {
                             LICENSE => Some(format!("text{operator}{value}")),
                             _ => None,
                         }),
-                )?
-                .into_query();
+                )?;
 
-            // Combine SPDX and CycloneDX results
-            let combined_condition = Condition::any()
-                .add(
-                    Expr::col((qualified_purl::Entity, qualified_purl::Column::Id))
-                        .eq(PgFunc::any(qualified_purl_ids_filtered_by_license)),
-                )
-                .add(qualified_purl::Column::Id.in_subquery(cyclonedx_subquery));
-            select = select.filter(combined_condition);
+            QueryTrait::query(&mut spdx_select)
+                .union(UnionType::Distinct, cyclonedx_select.into_query());
+
+            select =
+                select.filter(qualified_purl::Column::Id.in_subquery(spdx_select.into_query()));
         }
 
         let limiter = select.limiting(connection, paginated.offset, paginated.limit);
-
         let total = limiter.total().await?;
 
         Ok(PaginatedResults {
@@ -524,9 +494,7 @@ impl PurlService {
             return Ok(recommendations);
         }
 
-        let base_purls = Self::fetch_base_purls(&input_purls, connection)
-            .instrument(info_span!("loading base purls"))
-            .await?;
+        let base_purls = Self::fetch_base_purls(&input_purls, connection).await?;
         if base_purls.is_empty() {
             for ip in &input_purls {
                 recommendations.insert(ip.purl.to_string(), Vec::new());
@@ -534,11 +502,10 @@ impl PurlService {
             return Ok(recommendations);
         }
 
-        let versioned_by_base = Self::fetch_versioned_purls_by_base(&base_purls, connection)
-            .instrument(info_span!("loading versioned purls"))
-            .await?;
+        let versioned_by_base =
+            Self::fetch_versioned_purls_by_base(&base_purls, connection).await?;
 
-        let base_purl_map: HashMap<PurlKey<'_>, &base_purl::Model> = base_purls
+        let base_purl_map: HashMap<_, _> = base_purls
             .iter()
             .map(|bp| (PurlKey::from_base_purl(bp), bp))
             .collect();
@@ -577,13 +544,12 @@ impl PurlService {
         }
 
         // Batch fetch vulnerability statuses and qualified PURLs for all winners
-        let winner_base_ids: Vec<_> = winners.iter().map(|w| w.base.id).unique().collect();
-        let winner_vp_ids: Vec<_> = winners.iter().map(|w| w.versioned_purl.id).collect();
-
-        let statuses_by_base =
-            Self::fetch_vulnerability_statuses(&winner_base_ids, &winner_vp_ids, connection)
-                .instrument(info_span!("loading vulnerability statuses"))
-                .await?;
+        let statuses_by_base = Self::fetch_vulnerability_statuses(
+            winners.iter().map(|w| w.base.id).unique(),
+            winners.iter().map(|w| w.versioned_purl.id),
+            connection,
+        )
+        .await?;
 
         // Assemble recommendations from batched data
         for winner in winners {
@@ -596,15 +562,16 @@ impl PurlService {
 
     /// Batch-loads vulnerability statuses for the winning versioned PURLs, grouped by base PURL ID.
     /// Chunks by base PURL IDs to stay within Postgres bind parameter limits.
-    #[instrument(skip(winner_base_ids, winner_vp_ids, connection), err)]
+    #[instrument(skip_all, err(level = tracing::Level::INFO))]
     async fn fetch_vulnerability_statuses<C: ConnectionTrait>(
-        winner_base_ids: &[Uuid],
-        winner_vp_ids: &[Uuid],
+        winner_base_ids: impl IntoIterator<Item = Uuid>,
+        winner_vp_ids: impl IntoIterator<Item = Uuid>,
         connection: &C,
     ) -> Result<HashMap<Uuid, Vec<StatusInfo>>, Error> {
         let mut statuses_by_base: HashMap<_, Vec<StatusInfo>> = HashMap::new();
+        let winner_vp_ids: Vec<_> = winner_vp_ids.into_iter().collect();
 
-        let base_chunks = chunked_with(1, winner_base_ids.iter().copied());
+        let base_chunks = chunked_with(1, winner_base_ids.into_iter());
         for base_chunk in &base_chunks {
             let base_chunk: Vec<_> = base_chunk.collect();
             let all_statuses = purl_status::Entity::find()
@@ -629,13 +596,21 @@ impl PurlService {
                         .arg(Expr::col((version_range::Entity, Asterisk))),
                 ))
                 .all(connection)
+                .instrument(info_span!("querying purl statuses"))
                 .await?;
 
             let vulns = all_statuses
                 .load_one(vulnerability::Entity, connection)
+                .instrument(info_span!("loading vulnerabilities"))
                 .await?;
-            let advisories_loaded = all_statuses.load_one(advisory::Entity, connection).await?;
-            let status_models = all_statuses.load_one(status::Entity, connection).await?;
+            let advisories_loaded = all_statuses
+                .load_one(advisory::Entity, connection)
+                .instrument(info_span!("loading advisories"))
+                .await?;
+            let status_models = all_statuses
+                .load_one(status::Entity, connection)
+                .instrument(info_span!("loading statuses"))
+                .await?;
             let status_slug_map: HashMap<_, _> = status_models
                 .into_iter()
                 .flatten()
@@ -647,6 +622,7 @@ impl PurlService {
                     remediation_purl_status::Entity,
                     connection,
                 )
+                .instrument(info_span!("loading remediations"))
                 .await?;
 
             for (((vuln, advisory), ps), rems) in vulns
@@ -735,7 +711,7 @@ impl PurlService {
 
     /// Batch-fetches base PURL entities for the deduplicated set of input PURLs.
     /// Chunks the OR conditions to stay within Postgres bind parameter limits.
-    #[instrument(skip(input_purls, connection), err)]
+    #[instrument(skip_all, err(level = tracing::Level::INFO))]
     async fn fetch_base_purls<C: ConnectionTrait>(
         input_purls: &[InputPurl],
         connection: &C,
@@ -767,7 +743,7 @@ impl PurlService {
 
     /// Loads all versioned PURLs for the given base PURLs, grouped by base PURL ID.
     /// Chunks the IN clause to stay within Postgres bind parameter limits.
-    #[instrument(skip(base_purls, connection), err)]
+    #[instrument(skip_all, err(level = tracing::Level::INFO))]
     async fn fetch_versioned_purls_by_base<C: ConnectionTrait>(
         base_purls: &[base_purl::Model],
         connection: &C,
