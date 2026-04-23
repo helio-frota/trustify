@@ -293,6 +293,7 @@ async fn change_ps_list_vulns_all(ctx: &TrustifyContext) -> anyhow::Result<()> {
     // must be 2, as we consider deprecated ones too
 
     assert_eq!(purl.advisories.len(), 2);
+    #[allow(clippy::unnecessary_sort_by)]
     purl.advisories
         .sort_unstable_by(|a, b| a.head.modified.cmp(&b.head.modified));
     let (slice1, slice2) = purl.advisories.split_at_mut(1);
