@@ -30,6 +30,7 @@ pub struct Snapshot {
     pub strip: usize,
     pub fix_zstd: bool,
     /// Whether to use Btrfs snapshots. When false, TempDir is used.
+    #[allow(dead_code)]
     pub use_btrfs: bool,
 }
 
