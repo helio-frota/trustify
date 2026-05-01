@@ -29,6 +29,8 @@ pub struct Snapshot {
     pub snapshot_file: Option<String>,
     pub strip: usize,
     pub fix_zstd: bool,
+    /// Whether to use Btrfs snapshots. When false, TempDir is used.
+    pub use_btrfs: bool,
 }
 
 impl Snapshot {
@@ -51,6 +53,7 @@ impl Snapshot {
                 snapshot_file: _, // we don't work with the snapshot file
             strip,
             fix_zstd,
+            use_btrfs: _,
         } = self;
 
         let storage_file = base.join(storage_file);
@@ -178,6 +181,19 @@ impl Snapshot {
     /// a BTRFS snapshot of an import. If such a snapshot doesn't exist yet, it will be created
     /// first.
     pub async fn materialize(self) -> anyhow::Result<TrustifyTestContext> {
+        // If Btrfs snapshots are not requested, use TempDir
+        if !self.use_btrfs {
+            let tmp = tempfile::TempDir::new()?;
+            let (db, storage, psql) = self.setup(&tmp).await?;
+
+            return Ok(TrustifyTestContext::new(
+                db,
+                psql.settings().port,
+                storage,
+                defer(psql).then(defer(tmp)),
+            ));
+        }
+
         use crate::ctx::migration::snapshot::btrfs::SnapshotProvider;
 
         let running = btrfs::Running::new(SnapshotProvider {

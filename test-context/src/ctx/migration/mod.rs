@@ -167,6 +167,7 @@ impl<ID: DumpId> TrustifyMigrationContext<ID> {
                     snapshot_file: None,
                     strip: 0,
                     fix_zstd: false,
+                    use_btrfs: false,
                 }
             }
 
@@ -202,6 +203,7 @@ impl<ID: DumpId> TrustifyMigrationContext<ID> {
                     snapshot_file: snapshot_file.map(ToOwned::to_owned),
                     strip,
                     fix_zstd,
+                    use_btrfs: true,
                 }
             }
         };
