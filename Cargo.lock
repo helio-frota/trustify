@@ -1279,9 +1279,9 @@ dependencies = [
 
 [[package]]
 name = "build-info"
-version = "0.0.43"
+version = "0.0.44"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "42ad57e538cfa5ba5570e85fb477c1334bbb3da83cd58eb71f165eb33916b0b6"
+checksum = "b805bb57542f0a735dc95cf8c1247513e6d704e0dee22ab24add3d10f872afcf"
 dependencies = [
  "build-info-common",
  "build-info-proc",
@@ -1290,9 +1290,9 @@ dependencies = [
 
 [[package]]
 name = "build-info-build"
-version = "0.0.43"
+version = "0.0.44"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8e20258b9c7ef2a5fe5d8a9819e9054b1fccbed93ae7003656ff0c1d44c4e8c5"
+checksum = "93c808dbd5c28f097b574cb2f5808aca8c6486351bbee5cdb48a379ac091106f"
 dependencies = [
  "anyhow",
  "build-info-common",
@@ -1310,9 +1310,9 @@ dependencies = [
 
 [[package]]
 name = "build-info-common"
-version = "0.0.43"
+version = "0.0.44"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5f041ee57677a6eb7b2061347e324e78b48973a138e51b483125193b4690ac80"
+checksum = "52a3f141b0116f00ce3a1b6082c061c83ffd5a167a0d7ff5a4db479cd2974226"
 dependencies = [
  "chrono",
  "derive_more 2.1.1",
@@ -1322,9 +1322,9 @@ dependencies = [
 
 [[package]]
 name = "build-info-proc"
-version = "0.0.43"
+version = "0.0.44"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d8be7a84bd6bdf38c58dd5a4f0ec4b3ed40b9524ba21e9df8d6e0be4dc938137"
+checksum = "5d9c3682e6428784df6235b0bb5fe720eb73a72405ebeef74f076223f4ef70a1"
 dependencies = [
  "anyhow",
  "build-info-common",
