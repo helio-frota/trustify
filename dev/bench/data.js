@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793037300941,
+  "lastUpdate": 1793052613820,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -24034,6 +24034,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 6,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "gilles@redhat.com",
+            "name": "gildub",
+            "username": "gildub"
+          },
+          "committer": {
+            "email": "gilles@redhat.com",
+            "name": "Gilles Dubreuil",
+            "username": "gildub"
+          },
+          "distinct": false,
+          "id": "876219fdeb3d3e77619ca5b43786d44864b2aaf7",
+          "message": "fix(crypto): address concurrent update datetime and affected count",
+          "timestamp": "2026-10-26T21:08:45Z",
+          "tree_id": "725f88c4e4a92ed930c56af2d5f8863a3dd14be9",
+          "url": "https://github.com/guacsec/trustify/commit/876219fdeb3d3e77619ca5b43786d44864b2aaf7"
+        },
+        "date": 1793052611725,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
             "unit": "s"
           }
         ]
