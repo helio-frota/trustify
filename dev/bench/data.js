@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792861857926,
+  "lastUpdate": 1793005943235,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -23889,6 +23889,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 7,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jfuller@redhat.com",
+            "name": "rh-jfuller",
+            "username": "rh-jfuller"
+          },
+          "committer": {
+            "email": "jfuller@redhat.com",
+            "name": "James Fuller",
+            "username": "rh-jfuller"
+          },
+          "distinct": false,
+          "id": "6f50c704ee65ab047cc4fcecfebb730a092a9ec2",
+          "message": "sec: resolve cargo audit findings and document unfixable advisories",
+          "timestamp": "2026-10-26T08:15:43Z",
+          "tree_id": "c44689d41a75808768c14082a159f47f3815b951",
+          "url": "https://github.com/guacsec/trustify/commit/6f50c704ee65ab047cc4fcecfebb730a092a9ec2"
+        },
+        "date": 1793005940882,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
             "unit": "s"
           }
         ]
