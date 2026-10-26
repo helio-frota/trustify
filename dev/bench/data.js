@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793005943235,
+  "lastUpdate": 1793008951043,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -23913,6 +23913,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/guacsec/trustify/commit/6f50c704ee65ab047cc4fcecfebb730a092a9ec2"
         },
         "date": 1793005940882,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 8,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "5d90b46978b334c1a132d29f6404b082bf6246d5",
+          "message": "Revert \"feat(importer): support OSV HTTP feeds alongside Git sources\"\n\nThis reverts commit 80df3d9c359ab2b9e4cd871ca56fab57178bb65a.",
+          "timestamp": "2026-10-26T10:42:24+01:00",
+          "tree_id": "18e4033d6fa2f36eb163d89c77b1f2e1aa82f729",
+          "url": "https://github.com/guacsec/trustify/commit/5d90b46978b334c1a132d29f6404b082bf6246d5"
+        },
+        "date": 1793008948501,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
