@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793088665085,
+  "lastUpdate": 1793110593894,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -24092,6 +24092,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 5,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jfuller@redhat.com",
+            "name": "rh-jfuller",
+            "username": "rh-jfuller"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": false,
+          "id": "7f55826e06db6cb560e8544575a78406b772c937",
+          "message": "perf(correlation):Add describes relationship partial index on package_to_package table",
+          "timestamp": "2026-10-27T13:13:33Z",
+          "tree_id": "0f4c8a33a801818828f80b764f1875bd14404b58",
+          "url": "https://github.com/guacsec/trustify/commit/7f55826e06db6cb560e8544575a78406b772c937"
+        },
+        "date": 1793110591490,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 7,
             "unit": "s"
           }
         ]
