@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793186335756,
+  "lastUpdate": 1793193249342,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -24150,6 +24150,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 10,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "ctron@dentrassi.de",
+            "name": "Jens Reimann",
+            "username": "ctron"
+          },
+          "distinct": true,
+          "id": "bdca9119ed944d020ff09369fea69f43bd458ab8",
+          "message": "build(deps): bump msgpack from 1.2.1 to 1.2.3 in /tools/perf\n\nBumps [msgpack](https://github.com/msgpack/msgpack-python) from 1.2.1 to 1.2.3.\n- [Release notes](https://github.com/msgpack/msgpack-python/releases)\n- [Changelog](https://github.com/msgpack/msgpack-python/blob/main/CHANGELOG.md)\n- [Commits](https://github.com/msgpack/msgpack-python/compare/v1.2.1...v1.2.3)\n\n---\nupdated-dependencies:\n- dependency-name: msgpack\n  dependency-version: 1.2.3\n  dependency-type: indirect\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2026-10-28T11:57:08Z",
+          "tree_id": "a4e879619acff9345584287bc730cde52755dca6",
+          "url": "https://github.com/guacsec/trustify/commit/bdca9119ed944d020ff09369fea69f43bd458ab8"
+        },
+        "date": 1793193247348,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 9,
             "unit": "s"
           }
         ]
