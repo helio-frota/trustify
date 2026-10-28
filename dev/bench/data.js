@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793193249342,
+  "lastUpdate": 1793205607581,
   "repoUrl": "https://github.com/guacsec/trustify",
   "entries": {
     "Benchmark": [
@@ -24179,6 +24179,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Ingest DS3",
             "value": 9,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "gilles@redhat.com",
+            "name": "gildub",
+            "username": "gildub"
+          },
+          "committer": {
+            "email": "gilles@redhat.com",
+            "name": "Gilles Dubreuil",
+            "username": "gildub"
+          },
+          "distinct": false,
+          "id": "48e5577e27ec656630a35144a07c205566c8d0a5",
+          "message": "fix(crypto): use primitive field in policy evaluation\n\nParse the primitive field in AlgorithmProps so evaluate_algorithm\nactually consumes it. Hash primitives with short digests (≤128 bits)\nare now classified as NonCompliant, and a dedicated test proves the\nverdict changes when the primitive field is absent or mislocated.\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>",
+          "timestamp": "2026-10-28T15:15:35Z",
+          "tree_id": "a35de998ef5ce89520d8efd6039ab35579c08550",
+          "url": "https://github.com/guacsec/trustify/commit/48e5577e27ec656630a35144a07c205566c8d0a5"
+        },
+        "date": 1793205603463,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Ingest DS3",
+            "value": 7,
             "unit": "s"
           }
         ]
